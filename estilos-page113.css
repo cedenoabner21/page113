@@ -392,3 +392,94 @@ img {
     opacity: 0;
     pointer-events: none;
 }
+/* ==========================================
+   ADAPTACIÓN PARA TELÉFONOS (PANTALLA VERTICAL)
+========================================== */
+
+/* La orden @media funciona como un interruptor automático. 
+   Solo se activará cuando la pantalla del usuario tenga un ancho máximo de 768px. */
+@media (max-width: 768px) {
+
+    /* ORDEN 1: COMPACTAR LA CABECERA
+       Reducimos el padding y el espacio entre enlaces para que el menú no se salga por la derecha. */
+    .cabecera-fija {
+        padding: 12px 20px;
+    }
+
+    .navegacion-principal {
+        gap: 15px; /* Bajamos la separación de 50px a 15px */
+    }
+
+    .navegacion-principal a {
+        font-size: 13px; /* Reducimos levemente la letra para que quepa todo el menú */
+    }
+
+    .logo-esquina {
+        width: 45px; /* Hacemos el logo pacman un poco más compacto */
+    }
+
+    /* ORDEN 2: REESTRUCTURAR EL HERO DE INICIO
+       Cambiamos la dirección del Flexbox para que el texto quede arriba y la imagen abajo. */
+    .hero-contenedor, 
+    .seccion-hero {
+        flex-direction: column; /* Ordena los elementos en columna de arriba hacia abajo */
+        text-align: center;     /* Centramos el texto para mejor lectura en celulares */
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .hero-texto, 
+    .hero-imagen {
+        width: 100%; /* Obligamos a que cada bloque ocupe el 100% del ancho del teléfono */
+        margin-bottom: 25px;
+    }
+
+    .hero-texto h1 {
+        font-size: 28px; /* Achicamos el título para que no ocupe 5 líneas de pantalla */
+    }
+
+    /* ORDEN 3: CONVERTIR LAS GRILLAS DE 3 COLUMNAS A 1 SOLA
+       Esto arregla la sección del Portafolio y el resumen de Servicios. */
+    .tarjetas-resumen-grid, 
+    .cuadricula-portafolio {
+        grid-template-columns: 1fr; /* Reemplazamos el repeat(3, 1fr) por 1 sola columna llena */
+        gap: 20px;
+    }
+
+    /* ORDEN 4: APILAR LAS TARJETAS DE SERVICIOS
+       Convertimos el contenedor de servicios de fila horizontal a columna vertical. */
+    .contenedor-servicios {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .tarjeta-servicio {
+        width: 100%;       /* Ocupa el ancho disponible */
+        max-width: 320px;  /* Le ponemos un límite para que no se vea deforme */
+    }
+
+    /* ORDEN 5: REORDENAR LA SECCIÓN NOSOTROS
+       Cancelamos el truco de la fila invertida para que la foto siempre quede bien alineada con su texto. */
+    .fila-nosotros, 
+    .fila-invertida {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .texto-nosotros, 
+    .imagen-nosotros {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* ORDEN 6: AJUSTAR EL PIE DE PÁGINA (FOOTER)
+       Pasamos las 3 columnas del footer a una sola lista centrada. */
+    .pie-de-pagina {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+}
