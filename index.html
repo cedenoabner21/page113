@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page113</title>
+
+    <link rel="icon" href="logo-ac.png" type="image/png">
+
+    <!-- conexion con google fonts (space mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos-page113.css">
+</head>
+
+<body>
+
+    <!-- ------------------------ -->
+    <!-- ------- CABECERA ------- -->
+    <!-- ------------------------ -->
+    <header class="cabecera-fija">
+        
+        <!-- Botón de menú hamburguesa (Para móviles) -->
+        <button id="boton-menu" class="icono-hamburguesa">
+            <span>&#9776;</span>
+        </button>
+
+        <nav class="navegacion-principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#portafolio">Portafolio</a>
+            <a href="#nosotros">Nosotros</a>
+        </nav>
+
+        <img src="logo-ac.png" alt="Logo page113" class="logo-esquina">
+        
+    </header>
+
+
+<!-- ------------------------ -->
+<!-- -------- INICIO -------- -->
+<!-- ------------------------ -->
+    <section id="inicio" class="caja-animada">
+        
+        <!-- BLOQUE 1: HERO DE BIENVENIDA -->
+        <div class="hero-contenedor">
+            <div class="hero-texto">
+                <h1>Bienvenido a Page113.com!</h1>
+                <p class="slogan">Tu gancho o slogan tecnológico va aquí.</p>
+            </div>
+
+            <div class="hero-imagen">
+                <img src="programacion-intensa.jpg" alt="Fondo de programación">
+            </div>
+        </div>
+
+        <!-- BLOQUE 2: VISTA PREVIA DE SERVICIOS (Genera el efecto de Scroll) -->
+        <div class="inicio-resumen">
+            <h2>Lo que construimos en Page113</h2>
+            <p class="subtitulo-resumen">Soluciones web rápidas, modernas y personalizadas para potenciar tus proyectos.</p>
+
+            <div class="tarjetas-resumen-grid">
+
+                <div class="caja-resumen">
+                    <span class="icono-servicio">💻</span>
+                    <h3>Desarrollo Web</h3>
+                    <p>Sistemas interactivos y dinámicos para empresas y proyectos personales.</p>
+                </div>
+
+                <div class="caja-resumen">
+                    <span class="icono-servicio">⚡</span>
+                    <h3>Diseño & Maquetación</h3>
+                    <p>Sitios web limpios y construidos desde cero.</p>
+                </div>
+
+                <div class="caja-resumen">
+                    <span class="icono-servicio">🚀</span>
+                    <h3>Alojamiento Servidor</h3>
+                    <p>Próximamente infraestructura de servidores dedicados para tus páginas.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ------------------------ -->
+    <!-- ------ SERVICIOS ------- -->
+    <!-- ------------------------ -->
+
+    <section id="servicios" class="seccion-servicios caja-animada" style="display: none;">
+        
+        <h2>Tenemos todo para poner en pie tu página web.</h2>
+        
+        <div class="contenedor-servicios">
+
+            <!-- servicio de servidor -->
+
+            <button type="button" class="tarjeta-servicio" data-servicio="Host Servidor">
+                <span class="tooltip-info" title="Próximamente ofreceremos alojamiento web en servidores dedicados.">i</span>
+                <h3>Host Servidor</h3>
+                <div class="etiqueta-proximamente">Próximamente</div>
+            </button>
+
+            <!-- servicio de esarrollo -->
+            <button type="button" class="tarjeta-servicio" data-servicio="Desarrollo de Páginas Web">
+
+                <span class="tooltip-info" title="Diseño, maquetación y programación de sistemas web a la medida.">i</span>
+                <h3>Desarrollo de Páginas Web</h3>
+            </button>
+        </div>
+
+        <div class="llamada-accion">
+
+            <p>¿No estás seguro? Revisa nuestro portafolio!</p>
+            <a href="#portafolio" class="boton-primario">Portafolio</a>
+        </div>
+
+    </section>
+
+
+    <!-- ------------------------ -->
+    <!-- ----- PORTAFOLIO ------- -->
+    <!-- ------------------------ -->
+
+    <section id="portafolio" class="seccion-portafolio caja-animada" style="display: none;">
+        
+        <h2>Nuestro Trabajo</h2>
+
+        <div class="cuadricula-portafolio">
+
+            <!-- Proyecto MS -->
+            <div class="tarjeta-proyecto">
+                <p> Proyecto MS</p>
+                <img src="logo-ms.png" alt="Proyecto MS">
+                <p>MS.com (nah, es broma pero aqui va algo parecido)</p>
+                <button class="boton-detalles">Detalles</button>
+            </div>
+            
+            <div class="tarjeta-proyecto">
+                <div class="imagen-placeholder">Proyecto 2</div>
+                <button class="boton-detalles">Detalles</button>
+            </div>
+            
+            <div class="tarjeta-proyecto">
+                <div class="imagen-placeholder">Proyecto 3</div>
+                <button class="boton-detalles">Próximamente</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ------------------------ -->
+    <!-- ------ About us -------- -->
+    <!-- ------------------------ -->
+
+    <section id="nosotros" class="seccion-nosotros caja-animada" style="display: none;">
+
+        <h2>El origen de Page113</h2>
+
+        <div class="fila-nosotros">
+
+            <div class="texto-nosotros">
+
+                <p>
+                    Page113 no nació en una oficina aburrida ni tras reuniones corporativas. La verdad es que 
+                    surgió entre risas y la necesidad de tener un proyecto para nuestro trabajo de grado de
+                    colegio. Así de simple, creando prototipos de paginas y paginas como tal, nos recomendaron
+                    crear nuestra propia pagina web para mostrar y promocionar nuestra habilidad para crear
+                    paginas web. Así nacio Page113 como la ves ahora.
+                </p>
+            </div>
+
+            <div class="imagen-nosotros">
+
+                <div class="caja-foto">Foto mia programando (si aparece el texto es porque aun no la tomo)</div>
+            </div>
+        </div>
+
+        <div class="fila-nosotros fila-invertida">
+
+            <div class="imagen-nosotros">
+
+                <div class="caja-foto">Foto Transición Logo (lo mismo)</div>
+            </div>
+
+            <div class="texto-nosotros">
+
+                <p>
+                    ¿Por qué 113? Es un código encriptado a la vista de todos: la letra <strong>A</strong> es la 
+                    posición 1 en el alfabeto, y la <strong>M</strong> es la 13. Uniendo <strong>A.M.</strong> 
+                    (Abner y Mateo, los creadores) nació la identidad de nuestra marca. ¿Y el logo? Este nacio del
+                    clasico grafo de :v de SDLG (seguidores de la grasa). a ese grafo se le estilizo para que al
+                    dibujarlo estuvieran las iniciales de los creadores. ¿Pudiste notarlo?
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ------------------------ -->
+    <!-- ------- FOOTER --------- -->
+    <!-- ------------------------ -->
+    <footer class="pie-de-pagina">
+        
+        <!-- redes sociales -->
+        <div class="columna-footer">
+
+            <h4>Síguenos:</h4>
+            <ul>
+                <li><a href="https://www.instagram.com/far_seal/">Instagram</a></li>
+                <li><a href="#">Facebook (comming soon!)</a></li>
+                <li><a href="#">X (comming soon too!)</a></li>
+            </ul>
+        </div>
+
+        <!-- contacto -->
+        <div class="columna-footer">
+
+            <h4>Contáctanos:</h4>
+            <p>WA: +593 97 909 9282 / +593 99 048 5395</p>
+            <p>Mail: abnercedeno2009@gmail.com</p>
+        </div>
+
+        <!-- apoyo -->
+        <div class="columna-footer columna-apoyo">
+
+            <h4>Apóyanos:</h4>
+            <p>Regálanos una taza de café</p>
+            <button class="boton-paypal">PayPal</button>
+        </div>
+
+    </footer>
+
+    <script src="scripts-page113.js" defer></script>
+
+</body>
+</html>
