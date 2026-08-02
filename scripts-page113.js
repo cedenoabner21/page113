@@ -92,3 +92,33 @@ todosLosEnlacesNavegacion.forEach(function(enlace) {
         }, 400); 
     });
 });
+
+/* ==========================================
+   CONTROL INTERACTIVO DEL MENÚ HAMBURGUESA
+========================================== */
+
+// 1. RECOLECCIÓN DE DATOS: Capturamos el botón y la barra de navegación
+const botonHamburguesa = document.getElementById('boton-menu');
+const navegacionMenu = document.querySelector('.navegacion-principal');
+
+// 2. ORDEN DE INTERRUPTOR (TOGGLE):
+if (botonHamburguesa && navegacionMenu) {
+    
+    // Escuchamos el clic en el botón de la hamburguesa
+    botonHamburguesa.addEventListener('click', function() {
+        // Alterna la clase 'menu-activo': Si no la tiene se la pone (abre), si la tiene se la quita (cierra)
+        navegacionMenu.classList.toggle('menu-activo');
+    });
+
+    // 3. ORDEN DE CIERRE AUTOMÁTICO:
+    // Capturamos todos los enlaces internos del menú desplegable
+    const enlacesDelMenu = navegacionMenu.querySelectorAll('a');
+    
+    enlacesDelMenu.forEach(function(enlace) {
+        enlace.addEventListener('click', function() {
+            // Cuando el usuario toca una opción (ej: "Servicios"), cerramos el menú para que no tape la pantalla
+            navegacionMenu.classList.remove('menu-activo');
+        });
+    });
+}
+
