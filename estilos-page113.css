@@ -400,19 +400,49 @@ img {
    Solo se activará cuando la pantalla del usuario tenga un ancho máximo de 768px. */
 @media (max-width: 768px) {
 
-    /* ORDEN 1: COMPACTAR LA CABECERA
-       Reducimos el padding y el espacio entre enlaces para que el menú no se salga por la derecha. */
-    .cabecera-fija {
-        padding: 12px 20px;
+  /* ==========================================
+   ADAPTACIÓN DE MENÚ HAMBURGUESA EN MÓVILES
+========================================== */
+@media (max-width: 768px) {
+
+    /* ORDEN 1: HACER VISIBLE EL BOTÓN HAMBURGUESA */
+    #boton-menu {
+        display: block; /* Hacemos visible el botón en teléfonos */
+        background: none;
+        border: none;
+        font-size: 26px;
+        color: var(--negro-humo);
+        cursor: pointer;
+        padding: 5px;
     }
 
+    /* ORDEN 2: OCULTAR LA BARRA DE NAVEGACIÓN Y CONFIGURAR SU DESPLIEGUE */
     .navegacion-principal {
-        gap: 15px; /* Bajamos la separación de 50px a 15px */
+        display: none; /* Por defecto estará oculta en vertical */
+        flex-direction: column; /* Alinea los enlaces uno debajo del otro */
+        position: absolute; /* Se despega de la barra para flotar por encima */
+        top: 100%; /* Se ubica exactamente debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: var(--gris-claro);
+        padding: 25px 20px;
+        gap: 20px; /* Separación vertical entre botones */
+        border-bottom: 3px solid var(--verde-esmeralda);
+        text-align: center;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    }
+
+    /* ORDEN 3: CLASE ACTIVADORA (Disparada con JavaScript) */
+    /* Cuando esta clase se añade a la navegación, el menú aparece en pantalla */
+    .navegacion-principal.menu-activo {
+        display: flex; 
     }
 
     .navegacion-principal a {
-        font-size: 13px; /* Reducimos levemente la letra para que quepa todo el menú */
+        font-size: 16px; /* Tamaño de letra cómodo para tocar con el pulgar */
     }
+}
+
 
     .logo-esquina {
         width: 45px; /* Hacemos el logo pacman un poco más compacto */
