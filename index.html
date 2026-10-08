@@ -1,241 +1,548 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page113</title>
+    <meta name="description"
+        content="Servicio de desarrollo de páginas web en Santo Domingo. Creación de sitios web rápidos, accesibles y personalizados para emprendimientos con soporte post-entrega.">
+    <meta property="og:title" content="Page113 - Desarrollo Web para Emprendedores">
+    <meta property="og:description"
+        content="Impulsa tu negocio con una página web profesional. Trato directo, precios accesibles y entregas rápidas.">
+    <meta property="og:image" content="https://tudominio.com/ruta-a-imagen-de-vista-previa.jpg">
+    <meta property="og:type" content="website">
+    <title>Page113 - Desarrollo Web Profesional</title>
 
     <link rel="icon" href="logo-ac.png" type="image/png">
 
-    <!-- conexion con google fonts (space mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="estilos-page113.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blanco: '#FFFFFF',
+                        humo: '#1A1A1A',
+                        esmeralda: '#2ECC71',
+                        grisclaro: '#F4F6F7',
+                        gristexto: '#555555',
+                    },
+                    fontFamily: {
+                        mono: ['"Space Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .caja-oculta {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .caja-animada {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        .menu-activo {
+            display: flex !important;
+        }
+
+        .hero-visual {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.22), rgba(26, 26, 26, 0.08));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: "";
+            position: absolute;
+            inset: 20px;
+            border: 1px solid rgba(26, 26, 26, 0.08);
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(244, 246, 247, 0.15));
+        }
+
+        .mockup-browser {
+            background: #ffffff;
+            border: 1px solid rgba(26, 26, 26, 0.08);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(26, 26, 26, 0.12);
+        }
+
+        .mockup-bar {
+            height: 42px;
+            background: #f4f6f7;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 14px;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+        }
+
+        .mockup-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            display: inline-block;
+        }
+    </style>
 </head>
 
-<body>
-
-    <!-- ------------------------ -->
-    <!-- ------- CABECERA ------- -->
-    <!-- ------------------------ -->
-    <header class="cabecera-fija">
-        
-        <!-- Botón de menú hamburguesa (Para móviles) -->
-        <button id="boton-menu" class="icono-hamburguesa">
+<body class="font-mono bg-blanco text-humo pt-[100px]">
+    <header
+        class="fixed top-0 left-0 w-full bg-grisclaro flex justify-between items-center px-6 md:px-10 py-4 border-b-2 border-gray-200 z-50">
+        <button id="boton-menu" class="md:hidden text-3xl text-humo focus:outline-none" aria-label="Abrir menú">
             <span>&#9776;</span>
         </button>
 
-        <nav class="navegacion-principal">
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#portafolio">Portafolio</a>
-            <a href="#nosotros">Nosotros</a>
+        <nav
+            class="navegacion-principal hidden md:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-grisclaro md:bg-transparent px-6 py-6 md:p-0 gap-6 md:gap-12 border-b-4 border-esmeralda md:border-none shadow-lg md:shadow-none text-center">
+            <a href="#inicio" class="text-humo font-bold transition-colors duration-300 hover:text-esmeralda">Inicio</a>
+            <a href="#servicios"
+                class="text-humo font-bold transition-colors duration-300 hover:text-esmeralda">Servicios</a>
+            <a href="#portafolio"
+                class="text-humo font-bold transition-colors duration-300 hover:text-esmeralda">Portafolio</a>
+            <a href="#nosotros"
+                class="text-humo font-bold transition-colors duration-300 hover:text-esmeralda">Nosotros</a>
         </nav>
 
-        <img src="logo-ac.png" alt="Logo page113" class="logo-esquina">
-        
+        <img src="logo-ac.png" alt="Logo page113" class="w-12 md:w-[60px] h-auto object-contain">
     </header>
 
-
-<!-- ------------------------ -->
-<!-- -------- INICIO -------- -->
-<!-- ------------------------ -->
     <section id="inicio" class="caja-animada">
-        
-        <!-- BLOQUE 1: HERO DE BIENVENIDA -->
-        <div class="hero-contenedor">
-            <div class="hero-texto">
-                <h1>Bienvenido a Page113.com!</h1>
-                <p class="slogan">Su estudio de desarrollo web independiente especializado en sitios web modernos, ligeros y diseñados a medida.</p>
+        <div class="flex flex-col md:flex-row items-center justify-between px-6 md:px-10 py-12 md:py-20 min-h-[75vh]">
+            <div class="w-full md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+                <span
+                    class="inline-block px-4 py-2 mb-5 rounded-full bg-esmeralda/10 text-humo font-bold text-sm border border-esmeralda/20">Desarrollo
+                    web para emprendedores</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Impulsa tu negocio con Page113</h1>
+                <p class="text-gristexto text-lg mb-8 leading-relaxed">
+                    Creamos páginas web profesionales, rápidas y accesibles para negocios que necesitan crecer sin
+                    complicarse con la tecnología.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#servicios"
+                        class="inline-block bg-humo text-blanco px-8 py-3 rounded font-bold transition-colors duration-300 hover:bg-esmeralda">Ver
+                        soluciones</a>
+                    <a href="https://wa.me/593979099282?text=Hola%20equipo%20de%20Page113,%20deseo%20cotizar%20una%20p%C3%A1gina%20web"
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-block border-2 border-humo text-humo px-8 py-3 rounded font-bold transition-colors duration-300 hover:bg-humo hover:text-blanco">Cotizar
+                        por WhatsApp</a>
+                </div>
             </div>
 
-            <div class="hero-imagen">
-                <img src="programacion-intensa.jpg" alt="Fondo de programación">
+            <div
+                class="w-full md:w-[45%] h-[300px] md:h-[350px] hero-visual rounded-xl overflow-hidden shadow-lg relative">
+                <div class="absolute inset-6 rounded-xl bg-white/45 backdrop-blur-sm border border-white/60"></div>
+                <div class="absolute inset-10 rounded-xl flex items-center justify-center">
+                    <div class="mockup-browser w-full max-w-[500px] h-[220px] md:h-[250px]">
+                        <div class="mockup-bar">
+                            <span class="mockup-dot bg-red-400"></span>
+                            <span class="mockup-dot bg-yellow-400"></span>
+                            <span class="mockup-dot bg-green-400"></span>
+                        </div>
+                        <div
+                            class="h-full flex items-center justify-center bg-gradient-to-br from-grisclaro via-white to-esmeralda/10 p-6">
+                            <div class="text-center">
+                                <div class="flex items-center justify-center gap-3 mb-4">
+                                    <img src="logo-ac.png" alt="Logo Page113" class="w-12 h-12 object-contain">
+                                    <span class="text-2xl font-bold text-humo">Page113</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-3 text-xs font-bold text-gristexto">
+                                    <div class="bg-white rounded-lg p-3 shadow-sm">Diseño</div>
+                                    <div class="bg-white rounded-lg p-3 shadow-sm">Web</div>
+                                    <div class="bg-white rounded-lg p-3 shadow-sm">Soporte</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- BLOQUE 2: VISTA PREVIA DE SERVICIOS (Genera el efecto de Scroll) -->
-        <div class="inicio-resumen">
-            <h2>Lo que construimos en Page113</h2>
-            <p class="subtitulo-resumen">Soluciones web rápidas, modernas y personalizadas para potenciar tus proyectos.</p>
+        <div class="bg-grisclaro rounded-xl text-center px-6 md:px-10 py-16 mx-6 md:mx-10 mb-20 shadow-sm">
+            <h2 class="text-3xl font-bold mb-3">Lo que construimos en Page113</h2>
+            <p class="text-gristexto mb-12">Soluciones web rápidas, modernas y personalizadas para potenciar tus
+                proyectos.</p>
 
-            <div class="tarjetas-resumen-grid">
-
-                <div class="caja-resumen">
-                    <span class="icono-servicio">💻</span>
-                    <h3>Desarrollo Web</h3>
-                    <p>Sistemas interactivos y dinámicos para empresas y proyectos personales.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <div
+                    class="bg-blanco p-8 rounded-xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+                    <span class="text-4xl block mb-4">💻</span>
+                    <h3 class="font-bold text-xl mb-3">Desarrollo Web</h3>
+                    <p class="text-gristexto text-sm leading-relaxed">Páginas web funcionales, claras y pensadas para
+                        vender mejor tu oferta.</p>
                 </div>
 
-                <div class="caja-resumen">
-                    <span class="icono-servicio">⚡</span>
-                    <h3>Diseño & Maquetación</h3>
-                    <p>Sitios web limpios y construidos desde cero.</p>
+                <div
+                    class="bg-blanco p-8 rounded-xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+                    <span class="text-4xl block mb-4">⚡</span>
+                    <h3 class="font-bold text-xl mb-3">Diseño UI/UX</h3>
+                    <p class="text-gristexto text-sm leading-relaxed">Interfaces simples, amigables y enfocadas en que
+                        tu cliente compre o contacte.</p>
                 </div>
 
-                <div class="caja-resumen">
-                    <span class="icono-servicio">🚀</span>
-                    <h3>Alojamiento Servidor</h3>
-                    <p>Próximamente infraestructura de servidores dedicados para tus páginas.</p>
+                <div
+                    class="bg-blanco p-8 rounded-xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+                    <span class="text-4xl block mb-4">🚀</span>
+                    <h3 class="font-bold text-xl mb-3">Alojamiento</h3>
+                    <p class="text-gristexto text-sm leading-relaxed">Preparación para dejar tu sitio publicado y listo
+                        para crecer.</p>
+                </div>
+
+                <div
+                    class="bg-blanco p-8 rounded-xl border-2 border-esmeralda/40 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+                    <span class="text-4xl block mb-4">🛟</span>
+                    <h3 class="font-bold text-xl mb-3">Soporte Post-Entrega</h3>
+                    <p class="text-gristexto text-sm leading-relaxed">Acompañamiento real después de la entrega para que
+                        no te sientas solo con tu proyecto.</p>
                 </div>
             </div>
         </div>
-
     </section>
 
+    <section id="como-trabajamos" class="px-6 md:px-10 py-20 bg-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-esmeralda font-bold uppercase tracking-widest mb-4">Cómo trabajamos</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Un proceso claro para que no te quedes con dudas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-grisclaro p-8 rounded-xl border border-gray-200">
+                    <div
+                        class="w-12 h-12 rounded-full bg-esmeralda text-blanco flex items-center justify-center font-bold text-xl mx-auto mb-5">
+                        1</div>
+                    <h3 class="font-bold text-xl mb-3">Diagnóstico</h3>
+                    <p class="text-gristexto leading-relaxed">Analizamos tu negocio, objetivos y propuesta para definir
+                        la estrategia digital correcta.</p>
+                </div>
 
-    <!-- ------------------------ -->
-    <!-- ------ SERVICIOS ------- -->
-    <!-- ------------------------ -->
+                <div class="bg-grisclaro p-8 rounded-xl border border-gray-200">
+                    <div
+                        class="w-12 h-12 rounded-full bg-esmeralda text-blanco flex items-center justify-center font-bold text-xl mx-auto mb-5">
+                        2</div>
+                    <h3 class="font-bold text-xl mb-3">Desarrollo</h3>
+                    <p class="text-gristexto leading-relaxed">Diseñamos y programamos una web clara, moderna y funcional
+                        para tu marca.</p>
+                </div>
 
-    <section id="servicios" class="seccion-servicios caja-animada" style="display: none;">
-        
-        <h2>Tenemos todo para poner en pie tu página web.</h2>
-        
-        <div class="contenedor-servicios">
+                <div class="bg-grisclaro p-8 rounded-xl border border-gray-200">
+                    <div
+                        class="w-12 h-12 rounded-full bg-esmeralda text-blanco flex items-center justify-center font-bold text-xl mx-auto mb-5">
+                        3</div>
+                    <h3 class="font-bold text-xl mb-3">Entrega y Soporte</h3>
+                    <p class="text-gristexto leading-relaxed">Te entregamos tu proyecto listo y te acompañamos después
+                        para que sigas tranquilo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- servicio de servidor -->
+    <section id="servicios" class="caja-animada px-6 md:px-10 py-20 text-center" style="display: none;">
+        <h2 class="text-3xl font-bold mb-12">Tenemos todo para poner en pie tu página web.</h2>
 
-            <button type="button" class="tarjeta-servicio" data-servicio="Host Servidor">
-                <span class="tooltip-info" title="Próximamente ofreceremos alojamiento web en servidores dedicados.">i</span>
-                <h3>Host Servidor</h3>
-                <div class="etiqueta-proximamente">Próximamente</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <button type="button"
+                class="tarjeta-servicio bg-grisclaro p-10 rounded-xl border-2 border-gray-200 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-esmeralda hover:shadow-xl relative text-left"
+                data-servicio="Desarrollo de páginas web">
+                <span
+                    class="tooltip-info absolute top-4 right-4 bg-humo text-blanco w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                    title="Diseño, maquetación y programación a medida.">i</span>
+                <h3 class="text-xl font-bold mb-4 text-center">Desarrollo</h3>
+                <p class="text-gristexto text-sm leading-relaxed text-center">Sitios web personalizados para mostrar tus
+                    servicios, vender y captar clientes.</p>
             </button>
 
-            <!-- servicio de esarrollo -->
-            <button type="button" class="tarjeta-servicio" data-servicio="Desarrollo de Páginas Web">
+            <button type="button"
+                class="tarjeta-servicio bg-grisclaro p-10 rounded-xl border-2 border-gray-200 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-esmeralda hover:shadow-xl relative text-left"
+                data-servicio="Diseño UI/UX">
+                <span
+                    class="tooltip-info absolute top-4 right-4 bg-humo text-blanco w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                    title="Diseño visual claro, atractivo y enfocado en la conversión.">i</span>
+                <h3 class="text-xl font-bold mb-4 text-center">Diseño UI/UX</h3>
+                <p class="text-gristexto text-sm leading-relaxed text-center">Experiencias intuitivas y modernas para
+                    que los usuarios te entiendan rápido.</p>
+            </button>
 
-                <span class="tooltip-info" title="Diseño, maquetación y programación de sistemas web a la medida.">i</span>
-                <h3>Desarrollo de Páginas Web</h3>
+            <button type="button"
+                class="tarjeta-servicio bg-grisclaro p-10 rounded-xl border-2 border-esmeralda/50 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-esmeralda hover:shadow-xl relative text-left"
+                data-servicio="Acompañamiento y soporte">
+                <span
+                    class="tooltip-info absolute top-4 right-4 bg-humo text-blanco w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                    title="Te acompañamos después de la entrega para resolver dudas, ajustes y mantenimiento.">i</span>
+                <h3 class="text-xl font-bold mb-4 text-center">Acompañamiento y Soporte</h3>
+                <p class="text-gristexto text-sm leading-relaxed text-center">Asesoría continua y ayuda post-entrega
+                    para que no te quedes solo con tu sitio.</p>
             </button>
         </div>
 
-        <div class="llamada-accion">
-
-            <p>¿No estás seguro? Revisa nuestro portafolio!</p>
-            <a href="#portafolio" class="boton-primario">Portafolio</a>
+        <div class="mt-12">
+            <p class="mb-4 text-gristexto">¿No estás seguro de cómo se verá? Revisa nuestro portafolio.</p>
+            <a href="#portafolio"
+                class="inline-block bg-humo text-blanco px-8 py-3 rounded font-bold transition-colors duration-300 hover:bg-esmeralda">Ver
+                portafolio</a>
         </div>
-
     </section>
 
+    <section id="portafolio" class="caja-animada px-6 md:px-10 py-20 text-center" style="display: none;">
+        <h2 class="text-3xl font-bold mb-12">Nuestro trabajo</h2>
 
-    <!-- ------------------------ -->
-    <!-- ----- PORTAFOLIO ------- -->
-    <!-- ------------------------ -->
-
-    <section id="portafolio" class="seccion-portafolio caja-animada" style="display: none;">
-        
-        <h2>Nuestro Trabajo</h2>
-
-        <div class="cuadricula-portafolio">
-
-            <!-- Proyecto MS -->
-            <div class="tarjeta-proyecto">
-                <p> Proyecto MS</p>
-                <img src="logo-ms.png" alt="Proyecto MS">
-                <p>MS.com (nah, es broma pero aqui va algo parecido)</p>
-                <button class="boton-detalles">Detalles</button>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+                class="bg-grisclaro p-6 rounded-xl flex flex-col items-center border border-transparent transition-colors hover:border-esmeralda">
+                <p class="font-bold mb-4">Proyecto MS</p>
+                <div class="mockup-browser w-full mb-6">
+                    <div class="mockup-bar">
+                        <span class="mockup-dot bg-red-400"></span>
+                        <span class="mockup-dot bg-yellow-400"></span>
+                        <span class="mockup-dot bg-green-400"></span>
+                    </div>
+                    <div class="bg-white p-4">
+                        <img src="logo-ms.png" alt="Proyecto MS" class="w-full h-[150px] object-contain">
+                    </div>
+                </div>
+                <p class="text-sm text-gristexto mb-6">Branding y mockup para una propuesta visual moderna.</p>
+                <button
+                    class="boton-detalles w-full border-2 border-humo text-humo py-2 rounded font-bold transition-colors duration-300 hover:bg-humo hover:text-blanco">Detalles</button>
             </div>
-            
-            <div class="tarjeta-proyecto">
-                <div class="imagen-placeholder">Proyecto 2</div>
-                <button class="boton-detalles">Detalles</button>
+
+            <div
+                class="bg-grisclaro p-6 rounded-xl flex flex-col items-center border border-transparent transition-colors hover:border-esmeralda">
+                <p class="font-bold mb-4">Proyecto Kid</p>
+                <div class="mockup-browser w-full mb-6">
+                    <div class="mockup-bar">
+                        <span class="mockup-dot bg-red-400"></span>
+                        <span class="mockup-dot bg-yellow-400"></span>
+                        <span class="mockup-dot bg-green-400"></span>
+                    </div>
+                    <div class="bg-gradient-to-br from-esmeralda/10 via-white to-grisclaro p-4">
+                        <div
+                            class="h-[150px] rounded-xl bg-white border border-dashed border-esmeralda/40 flex items-center justify-center text-gristexto text-lg font-bold">
+                            Landing mockup</div>
+                    </div>
+                </div>
+                <p class="text-sm text-gristexto mb-6">Diseño de concepto para plataforma infantil y educativa.</p>
+                <button
+                    class="boton-detalles w-full border-2 border-humo text-humo py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-humo hover:text-blanco">Detalles</button>
             </div>
-            
-            <div class="tarjeta-proyecto">
-                <div class="imagen-placeholder">Proyecto 3</div>
-                <button class="boton-detalles">Próximamente</button>
+
+            <div
+                class="bg-grisclaro p-6 rounded-xl flex flex-col items-center border border-transparent transition-colors hover:border-esmeralda">
+                <p class="font-bold mb-4">Proyecto 3</p>
+                <div class="mockup-browser w-full mb-6">
+                    <div class="mockup-bar">
+                        <span class="mockup-dot bg-red-400"></span>
+                        <span class="mockup-dot bg-yellow-400"></span>
+                        <span class="mockup-dot bg-green-400"></span>
+                    </div>
+                    <div class="bg-gradient-to-br from-humo/5 via-white to-esmeralda/10 p-4">
+                        <div
+                            class="h-[150px] rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gristexto text-lg font-bold">
+                            Próximamente</div>
+                    </div>
+                </div>
+                <p class="text-sm text-gristexto mb-6">Próximo proyecto en proceso para cartera web de la agencia.</p>
+                <button
+                    class="boton-detalles w-full border-2 border-humo text-humo py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-humo hover:text-blanco">Próximamente</button>
             </div>
         </div>
-
     </section>
 
-    <!-- ------------------------ -->
-    <!-- ------ About us -------- -->
-    <!-- ------------------------ -->
+    <section id="nosotros" class="caja-animada bg-grisclaro px-6 md:px-10 py-20" style="display: none;">
+        <h2 class="text-3xl font-bold text-center mb-16">El origen de Page113</h2>
 
-    <section id="nosotros" class="seccion-nosotros caja-animada" style="display: none;">
-
-        <h2>El origen de Page113</h2>
-
-        <div class="fila-nosotros">
-
-            <div class="texto-nosotros">
-
-                <p>
-                    Page113 no nació en una oficina aburrida ni tras reuniones corporativas. La verdad es que 
-                    surgió entre risas y la necesidad de tener un proyecto para nuestro trabajo de grado de
-                    colegio. Así de simple, creando prototipos de paginas y paginas como tal, nos recomendaron
-                    crear nuestra propia pagina web para mostrar y promocionar nuestra habilidad para crear
-                    paginas web. Así nacio Page113 como la ves ahora.
+        <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
+            <div class="w-full md:w-[45%]">
+                <p class="text-lg leading-relaxed text-gristexto text-justify md:text-left">
+                    Page113 nació entre ideas, prototipos y la necesidad de crear algo útil para nuestro trabajo de
+                    grado. Cuando empezamos a construir soluciones web reales, descubrimos una pasión: ayudar a
+                    emprendedores a crecer sin perder tiempo en lo técnico.
                 </p>
             </div>
-
-            <div class="photo-abner">
-
-                <div class="caja-foto">Foto mia programando (si aparece el texto es porque aun no la tomo)</div>
+            <div class="w-full md:w-[45%] overflow-hidden rounded-xl shadow-lg border border-gray-200">
+                <img src="photo-abner.PNG" alt="Abner programando"
+                    class="w-full h-[250px] md:h-[320px] object-cover object-center">
             </div>
         </div>
 
-        <div class="fila-nosotros fila-invertida">
-
-            <div class="imagen-nosotros">
-
-                <div class="caja-foto">Foto Transición Logo (lo mismo)</div>
-            </div>
-
-            <div class="texto-nosotros">
-
-                <p>
-                    ¿Por qué 113? Es un código encriptado a la vista de todos: la letra <strong>A</strong> es la 
-                    posición 1 en el alfabeto, y la <strong>M</strong> es la 13. Uniendo <strong>A.M.</strong> 
-                    (Abner y Mateo, los creadores) nació la identidad de nuestra marca. ¿Y el logo? Este nacio del
-                    clasico grafo de :v de SDLG (seguidores de la grasa). a ese grafo se le estilizo para que al
-                    dibujarlo estuvieran las iniciales de los creadores. ¿Pudiste notarlo?
+        <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-8">
+            <div class="w-full md:w-[45%]">
+                <p class="text-lg leading-relaxed text-gristexto text-justify md:text-left">
+                    ¿Por qué 113? Porque <strong>A</strong> y <strong>M</strong> se convierten en una identidad. Ese
+                    código visual inspiró el nombre de la agencia y la forma en que representamos la creatividad y el
+                    trabajo en equipo: un dato técnico convertido en marca.
                 </p>
             </div>
+            <div
+                class="w-full md:w-[45%] bg-gradient-to-br from-esmeralda to-humo text-blanco h-[250px] flex items-center justify-center rounded-xl font-bold p-6 text-center shadow-lg">
+                <div>
+                    <div class="text-5xl mb-3">AM</div>
+                    <div class="text-lg">Page113</div>
+                </div>
+            </div>
         </div>
-
     </section>
 
-
-    <!-- ------------------------ -->
-    <!-- ------- FOOTER --------- -->
-    <!-- ------------------------ -->
-    <footer class="pie-de-pagina">
-        
-        <!-- redes sociales -->
-        <div class="columna-footer">
-
-            <h4>Síguenos:</h4>
-            <ul>
-                <li><a href="https://www.instagram.com/far_seal/">Instagram</a></li>
-                <li><a href="#">Facebook (comming soon!)</a></li>
-                <li><a href="#">X (comming soon too!)</a></li>
+    <footer
+        class="bg-humo text-blanco flex flex-col md:flex-row justify-between px-6 md:px-10 py-12 border-t-4 border-esmeralda gap-8 text-center md:text-left">
+        <div>
+            <h4 class="font-bold text-xl mb-4 text-esmeralda">Síguenos:</h4>
+            <ul class="space-y-2">
+                <li><a href="https://www.instagram.com/far_seal/"
+                        class="transition-colors hover:text-esmeralda">Instagram</a></li>
+                <li><a href="#" class="transition-colors hover:text-esmeralda">Facebook (Coming soon!)</a></li>
+                <li><a href="#" class="transition-colors hover:text-esmeralda">X (Coming soon too!)</a></li>
             </ul>
         </div>
 
-        <!-- contacto -->
-        <div class="columna-footer">
-
-            <h4>Contáctanos:</h4>
-            <p>WA: +593 97 909 9282 / +593 99 048 5395</p>
+        <div>
+            <h4 class="font-bold text-xl mb-4 text-esmeralda">Contáctanos:</h4>
+            <p class="mb-2">WA: +593 97 909 9282</p>
+            <p class="mb-2">WA: +593 99 048 5395</p>
             <p>Mail: abnercedeno2009@gmail.com</p>
         </div>
 
-        <!-- apoyo -->
-        <div class="columna-footer columna-apoyo">
-
-            <h4>Apóyanos:</h4>
-            <p>Regálanos una taza de café</p>
-            <button class="boton-paypal">PayPal</button>
+        <div>
+            <h4 class="font-bold text-xl mb-4 text-esmeralda">Apóyanos:</h4>
+            <p class="mb-4">Regálanos una taza de café</p>
+            <button
+                class="boton-paypal bg-blanco text-humo px-6 py-2 rounded font-bold transition-colors duration-300 hover:bg-esmeralda hover:text-blanco w-full md:w-auto">PayPal</button>
         </div>
-
     </footer>
 
-    <script src="scripts-page113.js" defer></script>
+    <div id="modal-global"
+        class="fixed inset-0 bg-humo/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="bg-blanco w-[90%] max-w-md p-8 rounded-xl shadow-2xl transform scale-95 transition-transform duration-300 relative text-center"
+            id="modal-contenido">
+            <button id="cerrar-modal" class="absolute top-4 right-4 text-gristexto hover:text-humo font-bold text-xl"
+                aria-label="Cerrar modal">&times;</button>
+            <h3 id="modal-titulo" class="text-2xl font-bold mb-4 text-humo">Título</h3>
+            <p id="modal-mensaje" class="text-gristexto mb-6">Mensaje del modal</p>
+            <button
+                class="bg-esmeralda text-blanco px-6 py-2 rounded font-bold hover:bg-humo transition-colors cerrar-modal-btn">Entendido</button>
+        </div>
+    </div>
 
+    <a href="https://wa.me/593979099282?text=Hola%20equipo%20de%20Page113,%20deseo%20cotizar%20una%20p%C3%A1gina%20web"
+        target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-6 right-6 bg-esmeralda text-blanco w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-2xl transition-all duration-300 z-50"
+        aria-label="Contactar por WhatsApp">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766 0 1.011.263 1.997.763 2.864l-.815 2.977 3.047-.8c.844.457 1.787.697 2.771.698 3.183 0 5.769-2.585 5.77-5.766 0-3.181-2.587-5.769-5.768-5.769zm3.093 8.355c-.15.424-.87.822-1.2.868-.313.044-.664.128-2.146-.486-1.786-.738-2.92-2.545-3.007-2.66-.088-.116-.718-.956-.718-1.823 0-.866.452-1.293.613-1.464.161-.171.352-.214.47-.214.116 0 .232.001.332.005.105.004.244-.041.381.291.139.336.474 1.157.516 1.242.042.086.071.186.012.302-.057.116-.086.186-.172.286-.086.1-.184.219-.258.297-.083.087-.171.181-.073.351.098.17.436.721.936 1.171.646.581 1.186.762 1.356.848.17.086.27.072.37-.042.1-.114.428-.501.543-.672.113-.171.226-.143.382-.085.156.057.994.471 1.165.557.171.086.286.128.328.2.043.072.043.414-.107.838z" />
+        </svg>
+    </a>
+
+    <script>
+        const modalGlobal = document.getElementById('modal-global');
+        const modalContenido = document.getElementById('modal-contenido');
+        const modalTitulo = document.getElementById('modal-titulo');
+        const modalMensaje = document.getElementById('modal-mensaje');
+
+        function abrirModal(titulo, mensaje) {
+            modalTitulo.textContent = titulo;
+            modalMensaje.textContent = mensaje;
+            modalGlobal.classList.remove('hidden');
+            setTimeout(() => {
+                modalGlobal.classList.remove('opacity-0');
+                modalContenido.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function cerrarModal() {
+            modalGlobal.classList.add('opacity-0');
+            modalContenido.classList.add('scale-95');
+            setTimeout(() => {
+                modalGlobal.classList.add('hidden');
+            }, 300);
+        }
+
+        document.getElementById('cerrar-modal').addEventListener('click', cerrarModal);
+        document.querySelector('.cerrar-modal-btn').addEventListener('click', cerrarModal);
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && !modalGlobal.classList.contains('hidden')) {
+                cerrarModal();
+            }
+        });
+
+        const botonesDetalles = document.querySelectorAll('.boton-detalles');
+        botonesDetalles.forEach(function (boton) {
+            boton.addEventListener('click', function () {
+                if (boton.textContent.trim() === 'Próximamente') {
+                    abrirModal('Atención', 'Este proyecto sigue en desarrollo. Te avisaremos cuando esté listo para mostrarse públicamente.');
+                } else {
+                    abrirModal('Más información', 'Estamos preparando los detalles técnicos y la presentación completa de este proyecto para mostrártelo en una próxima versión.');
+                }
+            });
+        });
+
+        const tarjetasServicios = document.querySelectorAll('.tarjeta-servicio');
+        tarjetasServicios.forEach(function (tarjeta) {
+            tarjeta.addEventListener('click', function (evento) {
+                if (evento.target.classList.contains('tooltip-info')) return;
+                const nombreServicio = this.getAttribute('data-servicio');
+                abrirModal('Gracias por tu interés', 'Te agradecemos mucho tu interés en ' + nombreServicio + '. Puedes escribirnos por WhatsApp para hablar directamente y recibir una cotización rápida.');
+            });
+        });
+
+        const botonDonacion = document.querySelector('.boton-paypal');
+        if (botonDonacion) {
+            botonDonacion.addEventListener('click', function () {
+                abrirModal('Apóyanos', 'Gracias por querer invitarnos un café. Pronto habilitaremos el enlace oficial para apoyar nuestro trabajo.');
+            });
+        }
+
+        const todosLosEnlacesNavegacion = document.querySelectorAll('a[href^="#"]');
+        const todasLasPantallas = document.querySelectorAll('section');
+
+        todosLosEnlacesNavegacion.forEach(function (enlace) {
+            enlace.addEventListener('click', function (evento) {
+                evento.preventDefault();
+                const idDestino = this.getAttribute('href');
+                const pantallaNueva = document.querySelector(idDestino);
+
+                let pantallaActual = null;
+                todasLasPantallas.forEach(function (pantalla) {
+                    if (pantalla.style.display !== 'none') {
+                        pantallaActual = pantalla;
+                    }
+                });
+
+                if (!pantallaNueva || pantallaActual === pantallaNueva) return;
+
+                pantallaActual.classList.add('caja-oculta');
+
+                setTimeout(function () {
+                    pantallaActual.style.display = 'none';
+                    pantallaNueva.classList.add('caja-oculta');
+                    pantallaNueva.style.display = '';
+                    pantallaNueva.offsetHeight;
+                    pantallaNueva.classList.remove('caja-oculta');
+                }, 400);
+            });
+        });
+
+        const botonHamburguesa = document.getElementById('boton-menu');
+        const navegacionMenu = document.querySelector('.navegacion-principal');
+
+        if (botonHamburguesa && navegacionMenu) {
+            botonHamburguesa.addEventListener('click', function () {
+                navegacionMenu.classList.toggle('menu-activo');
+            });
+
+            navegacionMenu.querySelectorAll('a').forEach(function (enlace) {
+                enlace.addEventListener('click', function () {
+                    navegacionMenu.classList.remove('menu-activo');
+                });
+            });
+        }
+    </script>
 </body>
+
 </html>
