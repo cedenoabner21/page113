@@ -501,32 +501,38 @@
         const todosLosEnlacesNavegacion = document.querySelectorAll('a[href^="#"]');
         const todasLasPantallas = document.querySelectorAll('section');
 
-        todosLosEnlacesNavegacion.forEach(function (enlace) {
-            enlace.addEventListener('click', function (evento) {
-                evento.preventDefault();
-                const idDestino = this.getAttribute('href');
-                const pantallaNueva = document.querySelector(idDestino);
+todosLosEnlacesNavegacion.forEach(function (enlace) {
+    enlace.addEventListener('click', function (evento) {
+        evento.preventDefault();
+        const idDestino = this.getAttribute('href');
+        const pantallaNueva = document.querySelector(idDestino);
 
-                let pantallaActual = null;
-                todasLasPantallas.forEach(function (pantalla) {
-                    if (pantalla.style.display !== 'none') {
-                        pantallaActual = pantalla;
-                    }
-                });
-
-                if (!pantallaNueva || pantallaActual === pantallaNueva) return;
-
-                pantallaActual.classList.add('caja-oculta');
-
-                setTimeout(function () {
-                    pantallaActual.style.display = 'none';
-                    pantallaNueva.classList.add('caja-oculta');
-                    pantallaNueva.style.display = '';
-                    pantallaNueva.offsetHeight;
-                    pantallaNueva.classList.remove('caja-oculta');
-                }, 400);
-            });
+        // Orden 1: Crear un arreglo para interceptar todas las pantallas activas simultáneamente
+        const pantallasVisibles = [];
+        todasLasPantallas.forEach(function (pantalla) {
+            if (pantalla.style.display !== 'none') {
+                pantallasVisibles.push(pantalla);
+            }
         });
+
+        // Orden 2: Validar la existencia del nodo destino
+        if (!pantallaNueva || pantallasVisibles.includes(pantallaNueva)) return;
+
+        // Orden 3: Inyectar la clase de transición CSS a todos los elementos del arreglo
+        pantallasVisibles.forEach(p => p.classList.add('caja-oculta'));
+
+        // Orden 4: Ejecutar la mutación del DOM tras el ciclo de animación
+        setTimeout(function () {
+            pantallasVisibles.forEach(p => p.style.display = 'none');
+            
+            pantallaNueva.classList.add('caja-oculta');
+            pantallaNueva.style.display = '';
+            // Forzar un Reflow del motor de renderizado para reiniciar la opacidad
+            pantallaNueva.offsetHeight; 
+            pantallaNueva.classList.remove('caja-oculta');
+        }, 400); // Sincronizado con tus 0.5s de CSS
+    });
+});
 
         const botonHamburguesa = document.getElementById('boton-menu');
         const navegacionMenu = document.querySelector('.navegacion-principal');
