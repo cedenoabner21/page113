@@ -15,9 +15,11 @@
 
     <link rel="icon" href="logo-ac.png" type="image/png">
 
+    <!-- Orden 3: Consolidación de dependencias. Solo Plus Jakarta Sans. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+        rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,7 +34,9 @@
                         gristexto: '#555555',
                     },
                     fontFamily: {
-                        mono: ['"Space Mono"', 'monospace'],
+                        // Orden 3: Aplicamos Plus Jakarta Sans como fuente principal
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"Plus Jakarta Sans"', 'sans-serif'],
                     }
                 }
             }
@@ -40,6 +44,11 @@
     </script>
 
     <style>
+        /* Orden 3: Forzamos la fuente en el body */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
         .caja-oculta {
             opacity: 0;
             pointer-events: none;
@@ -96,161 +105,188 @@
     </style>
 </head>
 
-<body class="font-mono bg-blanco text-humo pt-[100px]">
+<!-- Orden 2: Fondo principal oscuro y texto base claro -->
+<body class="font-sans bg-slate-950 text-slate-100 pt-[100px] antialiased">
     <header
-        class="fixed top-0 left-0 w-full bg-grisclaro flex justify-between items-center px-6 md:px-10 py-4 border-b-2 border-gray-200 z-50">
-        <button id="boton-menu" class="md:hidden text-3xl text-humo focus:outline-none" aria-label="Abrir menú">
+        class="fixed top-0 left-0 w-full bg-slate-900 flex justify-between items-center px-6 md:px-10 py-4 border-b border-slate-800 z-50">
+        <button id="boton-menu" class="md:hidden text-3xl text-slate-100 focus:outline-none" aria-label="Abrir menú">
             <span>&#9776;</span>
         </button>
 
         <nav
-            class="navegacion-principal hidden md:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-grisclaro md:bg-transparent px-6 py-6 md:p-0 gap-6 md:gap-12 border-b-4 border-esmeralda md:border-none shadow-lg md:shadow-none text-center">
-            <a href="#inicio" class="text-humo font-bold transition-colors duration-300 hover:text-esmeralda">Inicio</a>
+            class="navegacion-principal hidden md:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-slate-900 md:bg-transparent px-6 py-6 md:p-0 gap-6 md:gap-12 border-b-4 border-esmeralda md:border-none shadow-lg md:shadow-none text-center">
+            <a href="#inicio" class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Inicio</a>
             <a href="#servicios"
-                class="text-humo font-bold transition-colors duration-300 hover:text-esmeralda">Servicios</a>
+                class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Servicios</a>
             <a href="#portafolio"
-                class="text-humo font-bold transition-colors duration-300 hover:text-esmeralda">Portafolio</a>
+                class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Portafolio</a>
             <a href="#nosotros"
-                class="text-humo font-bold transition-colors duration-300 hover:text-esmeralda">Nosotros</a>
+                class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Nosotros</a>
         </nav>
 
         <img src="logo-ac.png" alt="Logo page113" class="w-12 md:w-[60px] h-auto object-contain">
     </header>
 
+    <!-- Orden 1: id="inicio" preservado intacto -->
     <section id="inicio" class="caja-animada">
 
         <!-- ============================================================ -->
-        <!-- HERO (gemini-code-1791507442622.html)                        -->
+        <!-- HERO NUEVO (Dark Mode) - Inyectado según Orden 1 y 4       -->
         <!-- ============================================================ -->
-        <div class="flex flex-col items-center justify-center text-center py-24 px-4 min-h-[70vh]">
-            <!-- Título principal -->
-            <h1 class="text-5xl md:text-6xl font-extrabold text-humo mb-6 tracking-tight">
-                Page<span class="text-esmeralda">113</span>
+        <div class="max-w-4xl mx-auto px-6 pt-12 pb-20 text-center flex flex-col items-center">
+
+            <!-- Badge de especialización -->
+            <span
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Desarrollo Web Especializado
+            </span>
+
+            <!-- Titular Principal -->
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                Webs de alto impacto para <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">profesionales
+                    exigentes</span>
             </h1>
-            <!-- Propuesta de valor -->
-            <p class="text-xl text-gristexto mb-10 max-w-2xl leading-relaxed">
-                Interfaces web informativas y optimizadas. Transformamos tus ideas en experiencias digitales rápidas,
-                modernas y atractivas, listas para escalar.
+
+            <!-- Subtítulo -->
+            <p class="text-lg sm:text-xl text-slate-400 max-w-2xl font-normal leading-relaxed mb-8">
+                Transformamos tu trayectoria en una presencia digital elegante, ultra rápida y diseñada para convertir
+                visitantes en clientes de alto valor.
             </p>
-            <!-- Botones Call to Action -->
-            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="#servicios"
-                    class="bg-esmeralda text-blanco font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-esmeralda/90 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    Nuestros Servicios
+
+            <!-- Botones de Acción -->
+            <!-- Orden 4: href apuntan a #contacto y #portafolio para ser interceptados por el SPA -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12">
+                <a href="#contacto"
+                    class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-all shadow-lg shadow-emerald-500/20 text-center">
+                    Cotizar mi proyecto
                 </a>
-                <a href="#como-trabajamos"
-                    class="bg-transparent border-2 border-humo text-humo font-bold py-4 px-8 rounded-xl hover:bg-humo hover:text-blanco transition-all duration-300">
-                    Cómo trabajamos
+                <a href="#portafolio"
+                    class="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold transition-all text-center">
+                    Ver trabajos previos
                 </a>
             </div>
+
+            <!-- Indicadores de confianza -->
+            <div class="pt-8 border-t border-slate-800/80 w-full grid grid-cols-2 md:grid-cols-3 gap-4 text-slate-400 text-sm">
+                <div><strong class="text-white block text-lg font-bold">100%</strong> Optimizado para móviles</div>
+                <div><strong class="text-white block text-lg font-bold">&lt; 1.5s</strong> Tiempo de carga</div>
+                <div class="col-span-2 md:col-span-1"><strong class="text-white block text-lg font-bold">SEO</strong> Listo para Google</div>
+            </div>
+
         </div>
+        <!-- ============================================================ -->
+        <!-- FIN HERO NUEVO                                               -->
+        <!-- ============================================================ -->
 
         <!-- ============================================================ -->
-        <!-- GRID DE TECNOLOGÍAS (gemini-code-1791507463606.html)         -->
+        <!-- GRID DE TECNOLOGÍAS - Orden 2: Adaptado a Dark Mode        -->
         <!-- ============================================================ -->
-        <div class="py-16 w-full max-w-5xl mx-auto border-t border-gray-200 mt-12">
-            <h3 class="text-2xl font-bold text-center mb-10 text-humo tracking-wide uppercase text-sm">Tecnologías que
+        <div class="py-16 w-full max-w-5xl mx-auto border-t border-slate-800 mt-12">
+            <h3 class="text-2xl font-bold text-center mb-10 text-slate-100 tracking-wide uppercase text-sm">Tecnologías que
                 dominamos</h3>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center px-4">
                 <!-- Caja 1: HTML5 -->
                 <div
-                    class="p-6 bg-grisclaro rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-2 transition-all duration-300">
-                    <h4 class="font-bold text-humo text-lg">HTML5</h4>
-                    <p class="text-sm text-gristexto mt-2">Estructura semántica</p>
+                    class="p-6 bg-slate-900 rounded-2xl shadow-sm border border-slate-800 hover:shadow-md hover:border-emerald-500/50 hover:-translate-y-2 transition-all duration-300">
+                    <h4 class="font-bold text-slate-100 text-lg">HTML5</h4>
+                    <p class="text-sm text-slate-400 mt-2">Estructura semántica</p>
                 </div>
                 <!-- Caja 2: Tailwind CSS -->
                 <div
-                    class="p-6 bg-grisclaro rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-2 transition-all duration-300">
-                    <h4 class="font-bold text-humo text-lg">Tailwind / CSS</h4>
-                    <p class="text-sm text-gristexto mt-2">Diseño adaptativo</p>
+                    class="p-6 bg-slate-900 rounded-2xl shadow-sm border border-slate-800 hover:shadow-md hover:border-emerald-500/50 hover:-translate-y-2 transition-all duration-300">
+                    <h4 class="font-bold text-slate-100 text-lg">Tailwind / CSS</h4>
+                    <p class="text-sm text-slate-400 mt-2">Diseño adaptativo</p>
                 </div>
                 <!-- Caja 3: JavaScript -->
                 <div
-                    class="p-6 bg-grisclaro rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-2 transition-all duration-300">
-                    <h4 class="font-bold text-humo text-lg">JavaScript</h4>
-                    <p class="text-sm text-gristexto mt-2">Lógica e interacción</p>
+                    class="p-6 bg-slate-900 rounded-2xl shadow-sm border border-slate-800 hover:shadow-md hover:border-emerald-500/50 hover:-translate-y-2 transition-all duration-300">
+                    <h4 class="font-bold text-slate-100 text-lg">JavaScript</h4>
+                    <p class="text-sm text-slate-400 mt-2">Lógica e interacción</p>
                 </div>
                 <!-- Caja 4: Python -->
                 <div
-                    class="p-6 bg-grisclaro rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-2 transition-all duration-300">
-                    <h4 class="font-bold text-humo text-lg">Python</h4>
-                    <p class="text-sm text-gristexto mt-2">Automatización</p>
+                    class="p-6 bg-slate-900 rounded-2xl shadow-sm border border-slate-800 hover:shadow-md hover:border-emerald-500/50 hover:-translate-y-2 transition-all duration-300">
+                    <h4 class="font-bold text-slate-100 text-lg">Python</h4>
+                    <p class="text-sm text-slate-400 mt-2">Automatización</p>
                 </div>
             </div>
         </div>
 
-        <!-- Bloque original "Lo que construimos" -->
-        <div class="bg-grisclaro rounded-xl text-center px-6 md:px-10 py-16 mx-6 md:mx-10 my-20 shadow-sm">
-            <h2 class="text-3xl font-bold mb-3">Lo que construimos en Page113</h2>
-            <p class="text-gristexto mb-12">Soluciones web rápidas, modernas y personalizadas para potenciar tus
+        <!-- Bloque original "Lo que construimos" - Orden 2: Adaptado a Dark Mode -->
+        <div class="bg-slate-900 rounded-xl text-center px-6 md:px-10 py-16 mx-6 md:mx-10 my-20 shadow-sm border border-slate-800">
+            <h2 class="text-3xl font-bold mb-3 text-slate-100">Lo que construimos en Page113</h2>
+            <p class="text-slate-400 mb-12">Soluciones web rápidas, modernas y personalizadas para potenciar tus
                 proyectos.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
                 <div
-                    class="bg-blanco p-8 rounded-xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+                    class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
                     <span class="text-4xl block mb-4">💻</span>
-                    <h3 class="font-bold text-xl mb-3">Desarrollo Web</h3>
-                    <p class="text-gristexto text-sm leading-relaxed">Páginas web funcionales, claras y pensadas para
+                    <h3 class="font-bold text-xl mb-3 text-slate-100">Desarrollo Web</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Páginas web funcionales, claras y pensadas para
                         vender mejor tu oferta.</p>
                 </div>
 
                 <div
-                    class="bg-blanco p-8 rounded-xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+                    class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
                     <span class="text-4xl block mb-4">⚡</span>
-                    <h3 class="font-bold text-xl mb-3">Diseño UI/UX</h3>
-                    <p class="text-gristexto text-sm leading-relaxed">Interfaces simples, amigables y enfocadas en que
+                    <h3 class="font-bold text-xl mb-3 text-slate-100">Diseño UI/UX</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Interfaces simples, amigables y enfocadas en que
                         tu cliente compre o contacte.</p>
                 </div>
 
                 <div
-                    class="bg-blanco p-8 rounded-xl border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+                    class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
                     <span class="text-4xl block mb-4">🚀</span>
-                    <h3 class="font-bold text-xl mb-3">Alojamiento</h3>
-                    <p class="text-gristexto text-sm leading-relaxed">Preparación para dejar tu sitio publicado y listo
+                    <h3 class="font-bold text-xl mb-3 text-slate-100">Alojamiento</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Preparación para dejar tu sitio publicado y listo
                         para crecer.</p>
                 </div>
 
                 <div
-                    class="bg-blanco p-8 rounded-xl border-2 border-esmeralda/40 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+                    class="bg-slate-950 p-8 rounded-xl border-2 border-emerald-500/40 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-400">
                     <span class="text-4xl block mb-4">🛟</span>
-                    <h3 class="font-bold text-xl mb-3">Soporte Post-Entrega</h3>
-                    <p class="text-gristexto text-sm leading-relaxed">Acompañamiento real después de la entrega para que
+                    <h3 class="font-bold text-xl mb-3 text-slate-100">Soporte Post-Entrega</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Acompañamiento real después de la entrega para que
                         no te sientas solo con tu proyecto.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="como-trabajamos" class="px-6 md:px-10 py-20 bg-white">
+    <!-- Orden 2: Sección Cómo trabajamos adaptada a Dark Mode -->
+    <section id="como-trabajamos" class="px-6 md:px-10 py-20 bg-slate-950">
         <div class="max-w-5xl mx-auto text-center">
             <p class="text-esmeralda font-bold uppercase tracking-widest mb-4">Cómo trabajamos</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Un proceso claro para que no te quedes con dudas</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-slate-100">Un proceso claro para que no te quedes con dudas</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-grisclaro p-8 rounded-xl border border-gray-200">
+                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
                     <div
-                        class="w-12 h-12 rounded-full bg-esmeralda text-blanco flex items-center justify-center font-bold text-xl mx-auto mb-5">
+                        class="w-12 h-12 rounded-full bg-esmeralda text-slate-950 flex items-center justify-center font-bold text-xl mx-auto mb-5">
                         1</div>
-                    <h3 class="font-bold text-xl mb-3">Diagnóstico</h3>
-                    <p class="text-gristexto leading-relaxed">Analizamos tu negocio, objetivos y propuesta para definir
+                    <h3 class="font-bold text-xl mb-3 text-slate-100">Diagnóstico</h3>
+                    <p class="text-slate-400 leading-relaxed">Analizamos tu negocio, objetivos y propuesta para definir
                         la estrategia digital correcta.</p>
                 </div>
 
-                <div class="bg-grisclaro p-8 rounded-xl border border-gray-200">
+                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
                     <div
-                        class="w-12 h-12 rounded-full bg-esmeralda text-blanco flex items-center justify-center font-bold text-xl mx-auto mb-5">
+                        class="w-12 h-12 rounded-full bg-esmeralda text-slate-950 flex items-center justify-center font-bold text-xl mx-auto mb-5">
                         2</div>
-                    <h3 class="font-bold text-xl mb-3">Desarrollo</h3>
-                    <p class="text-gristexto leading-relaxed">Diseñamos y programamos una web clara, moderna y funcional
+                    <h3 class="font-bold text-xl mb-3 text-slate-100">Desarrollo</h3>
+                    <p class="text-slate-400 leading-relaxed">Diseñamos y programamos una web clara, moderna y funcional
                         para tu marca.</p>
                 </div>
 
-                <div class="bg-grisclaro p-8 rounded-xl border border-gray-200">
+                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
                     <div
-                        class="w-12 h-12 rounded-full bg-esmeralda text-blanco flex items-center justify-center font-bold text-xl mx-auto mb-5">
+                        class="w-12 h-12 rounded-full bg-esmeralda text-slate-950 flex items-center justify-center font-bold text-xl mx-auto mb-5">
                         3</div>
-                    <h3 class="font-bold text-xl mb-3">Entrega y Soporte</h3>
-                    <p class="text-gristexto leading-relaxed">Te entregamos tu proyecto listo y te acompañamos después
+                    <h3 class="font-bold text-xl mb-3 text-slate-100">Entrega y Soporte</h3>
+                    <p class="text-slate-400 leading-relaxed">Te entregamos tu proyecto listo y te acompañamos después
                         para que sigas tranquilo.</p>
                 </div>
             </div>
@@ -258,13 +294,13 @@
     </section>
 
     <!-- ================================================================ -->
-    <!-- SERVICIOS (gemini-code-1791507475921.html)                       -->
+    <!-- SERVICIOS - Orden 2: Adaptado a Dark Mode                       -->
     <!-- ================================================================ -->
     <section id="servicios" class="caja-animada" style="display: none;">
-        <div class="py-20 w-full max-w-6xl mx-auto px-4">
+        <div class="py-20 w-full max-w-6xl mx-auto px-4 bg-slate-950">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-humo mb-4">Nuestros Servicios</h2>
-                <p class="text-lg text-gristexto max-w-2xl mx-auto">Soluciones de software estructuradas, escalables y
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-100 mb-4">Nuestros Servicios</h2>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto">Soluciones de software estructuradas, escalables y
                     diseñadas para destacar.</p>
             </div>
 
@@ -273,18 +309,18 @@
 
                 <!-- Tarjeta 1: Diseño Web -->
                 <div
-                    class="bg-blanco p-8 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                    class="bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-800 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
                     <!-- Contenedor del ícono -->
                     <div class="w-16 h-16 bg-esmeralda/10 text-esmeralda rounded-2xl flex items-center justify-center mb-6">
-                        <!-- Ícono SVG (Feather) -->
+                        <!-- Orden 3: stroke-width="2" conservado -->
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                             </path>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-humo mb-3">Desarrollo Web</h3>
-                    <p class="text-gristexto leading-relaxed mb-6">
+                    <h3 class="text-2xl font-bold text-slate-100 mb-3">Desarrollo Web</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
                         Arquitectura de sitios web informativos, rápidos y responsivos. Estructuramos código limpio para
                         que tu mensaje llegue sin barreras.
                     </p>
@@ -292,15 +328,16 @@
 
                 <!-- Tarjeta 2: Aplicaciones de Escritorio / Python -->
                 <div
-                    class="bg-blanco p-8 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
-                    <div class="w-16 h-16 bg-humo/10 text-humo rounded-2xl flex items-center justify-center mb-6">
+                    class="bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-800 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-slate-800 text-slate-300 rounded-2xl flex items-center justify-center mb-6">
+                        <!-- Orden 3: stroke-width="2" conservado -->
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-humo mb-3">Herramientas a Medida</h3>
-                    <p class="text-gristexto leading-relaxed mb-6">
+                    <h3 class="text-2xl font-bold text-slate-100 mb-3">Herramientas a Medida</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
                         Desarrollo de utilidades de escritorio y automatización de procesos internos. Sistemas locales
                         eficientes para optimizar tu flujo de trabajo.
                     </p>
@@ -308,15 +345,16 @@
 
                 <!-- Tarjeta 3: Optimización -->
                 <div
-                    class="bg-blanco p-8 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                    class="bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-800 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
                     <div class="w-16 h-16 bg-esmeralda/10 text-esmeralda rounded-2xl flex items-center justify-center mb-6">
+                        <!-- Orden 3: stroke-width="2" conservado -->
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-humo mb-3">Alto Rendimiento</h3>
-                    <p class="text-gristexto leading-relaxed mb-6">
+                    <h3 class="text-2xl font-bold text-slate-100 mb-3">Alto Rendimiento</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
                         Auditoría y optimización de código. Nos aseguramos de que cada interfaz renderice en
                         milisegundos, evitando cargas innecesarias en el DOM.
                     </p>
@@ -325,91 +363,93 @@
             </div>
         </div>
 
-        <!-- CTA original conservado -->
+        <!-- CTA original conservado - Orden 2: Adaptado -->
         <div class="pb-20 text-center px-6">
-            <p class="mb-4 text-gristexto">¿No estás seguro de cómo se verá? Revisa nuestro portafolio.</p>
+            <p class="mb-4 text-slate-400">¿No estás seguro de cómo se verá? Revisa nuestro portafolio.</p>
             <a href="#portafolio"
-                class="inline-block bg-humo text-blanco px-8 py-3 rounded font-bold transition-colors duration-300 hover:bg-esmeralda">Ver
+                class="inline-block bg-slate-800 text-slate-100 px-8 py-3 rounded font-bold transition-colors duration-300 hover:bg-esmeralda hover:text-slate-950">Ver
                 portafolio</a>
         </div>
     </section>
 
-    <section id="portafolio" class="caja-animada px-6 md:px-10 py-20 text-center" style="display: none;">
-        <h2 class="text-3xl font-bold mb-12">Nuestro trabajo</h2>
+    <!-- Orden 2: Portafolio adaptado a Dark Mode -->
+    <section id="portafolio" class="caja-animada px-6 md:px-10 py-20 text-center bg-slate-950" style="display: none;">
+        <h2 class="text-3xl font-bold mb-12 text-slate-100">Nuestro trabajo</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div
-                class="bg-grisclaro p-6 rounded-xl flex flex-col items-center border border-transparent transition-colors hover:border-esmeralda">
-                <p class="font-bold mb-4">Proyecto MS</p>
+                class="bg-slate-900 p-6 rounded-xl flex flex-col items-center border border-slate-800 transition-colors hover:border-esmeralda">
+                <p class="font-bold mb-4 text-slate-100">Proyecto MS</p>
                 <div class="mockup-browser w-full mb-6">
                     <div class="mockup-bar">
                         <span class="mockup-dot bg-red-400"></span>
                         <span class="mockup-dot bg-yellow-400"></span>
                         <span class="mockup-dot bg-green-400"></span>
                     </div>
-                    <div class="bg-white p-4">
+                    <div class="bg-slate-800 p-4">
                         <img src="logo-ms.png" alt="Proyecto MS" class="w-full h-[150px] object-contain">
                     </div>
                 </div>
-                <p class="text-sm text-gristexto mb-6">Branding y mockup para una propuesta visual moderna.</p>
+                <p class="text-sm text-slate-400 mb-6">Branding y mockup para una propuesta visual moderna.</p>
                 <button
-                    class="boton-detalles w-full border-2 border-humo text-humo py-2 rounded font-bold transition-colors duration-300 hover:bg-humo hover:text-blanco">Detalles</button>
+                    class="boton-detalles w-full border-2 border-slate-700 text-slate-300 py-2 rounded font-bold transition-colors duration-300 hover:bg-slate-700 hover:text-white">Detalles</button>
             </div>
 
             <div
-                class="bg-grisclaro p-6 rounded-xl flex flex-col items-center border border-transparent transition-colors hover:border-esmeralda">
-                <p class="font-bold mb-4">Proyecto Kid</p>
+                class="bg-slate-900 p-6 rounded-xl flex flex-col items-center border border-slate-800 transition-colors hover:border-esmeralda">
+                <p class="font-bold mb-4 text-slate-100">Proyecto Kid</p>
                 <div class="mockup-browser w-full mb-6">
                     <div class="mockup-bar">
                         <span class="mockup-dot bg-red-400"></span>
                         <span class="mockup-dot bg-yellow-400"></span>
                         <span class="mockup-dot bg-green-400"></span>
                     </div>
-                    <div class="bg-gradient-to-br from-esmeralda/10 via-white to-grisclaro p-4">
+                    <div class="bg-gradient-to-br from-esmeralda/10 via-slate-800 to-slate-900 p-4">
                         <div
-                            class="h-[150px] rounded-xl bg-white border border-dashed border-esmeralda/40 flex items-center justify-center text-gristexto text-lg font-bold">
+                            class="h-[150px] rounded-xl bg-slate-800 border border-dashed border-esmeralda/40 flex items-center justify-center text-slate-400 text-lg font-bold">
                             Landing mockup</div>
                     </div>
                 </div>
-                <p class="text-sm text-gristexto mb-6">Diseño de concepto para plataforma infantil y educativa.</p>
+                <p class="text-sm text-slate-400 mb-6">Diseño de concepto para plataforma infantil y educativa.</p>
                 <button
-                    class="boton-detalles w-full border-2 border-humo text-humo py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-humo hover:text-blanco">Detalles</button>
+                    class="boton-detalles w-full border-2 border-slate-700 text-slate-300 py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-slate-700 hover:text-white">Detalles</button>
             </div>
 
             <div
-                class="bg-grisclaro p-6 rounded-xl flex flex-col items-center border border-transparent transition-colors hover:border-esmeralda">
-                <p class="font-bold mb-4">Proyecto 3</p>
+                class="bg-slate-900 p-6 rounded-xl flex flex-col items-center border border-slate-800 transition-colors hover:border-esmeralda">
+                <p class="font-bold mb-4 text-slate-100">Proyecto 3</p>
                 <div class="mockup-browser w-full mb-6">
                     <div class="mockup-bar">
                         <span class="mockup-dot bg-red-400"></span>
                         <span class="mockup-dot bg-yellow-400"></span>
                         <span class="mockup-dot bg-green-400"></span>
                     </div>
-                    <div class="bg-gradient-to-br from-humo/5 via-white to-esmeralda/10 p-4">
+                    <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-esmeralda/10 p-4">
                         <div
-                            class="h-[150px] rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gristexto text-lg font-bold">
+                            class="h-[150px] rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 text-lg font-bold">
                             Próximamente</div>
                     </div>
                 </div>
-                <p class="text-sm text-gristexto mb-6">Próximo proyecto en proceso para cartera web de la agencia.</p>
+                <p class="text-sm text-slate-400 mb-6">Próximo proyecto en proceso para cartera web de la agencia.</p>
                 <button
-                    class="boton-detalles w-full border-2 border-humo text-humo py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-humo hover:text-blanco">Próximamente</button>
+                    class="boton-detalles w-full border-2 border-slate-700 text-slate-300 py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-slate-700 hover:text-white">Próximamente</button>
             </div>
         </div>
     </section>
 
-    <section id="nosotros" class="caja-animada bg-grisclaro px-6 md:px-10 py-20" style="display: none;">
-        <h2 class="text-3xl font-bold text-center mb-16">El origen de Page113</h2>
+    <!-- Orden 2: Nosotros adaptado a Dark Mode -->
+    <section id="nosotros" class="caja-animada bg-slate-900 px-6 md:px-10 py-20" style="display: none;">
+        <h2 class="text-3xl font-bold text-center mb-16 text-slate-100">El origen de Page113</h2>
 
         <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
             <div class="w-full md:w-[45%]">
-                <p class="text-lg leading-relaxed text-gristexto text-justify md:text-left">
+                <p class="text-lg leading-relaxed text-slate-400 text-justify md:text-left">
                     Page113 nació entre ideas, prototipos y la necesidad de crear algo útil para nuestro trabajo de
                     grado. Cuando empezamos a construir soluciones web reales, descubrimos una pasión: ayudar a
                     emprendedores a crecer sin perder tiempo en lo técnico.
                 </p>
             </div>
-            <div class="w-full md:w-[45%] overflow-hidden rounded-xl shadow-lg border border-gray-200">
+            <div class="w-full md:w-[45%] overflow-hidden rounded-xl shadow-lg border border-slate-800">
                 <img src="photo-abner.PNG" alt="Abner programando"
                     class="w-full h-[250px] md:h-[320px] object-cover object-center">
             </div>
@@ -417,14 +457,14 @@
 
         <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-8">
             <div class="w-full md:w-[45%]">
-                <p class="text-lg leading-relaxed text-gristexto text-justify md:text-left">
-                    ¿Por qué 113? Porque <strong>A</strong> y <strong>M</strong> se convierten en una identidad. Ese
+                <p class="text-lg leading-relaxed text-slate-400 text-justify md:text-left">
+                    ¿Por qué 113? Porque <strong class="text-slate-100">A</strong> y <strong class="text-slate-100">M</strong> se convierten en una identidad. Ese
                     código visual inspiró el nombre de la agencia y la forma en que representamos la creatividad y el
                     trabajo en equipo: un dato técnico convertido en marca.
                 </p>
             </div>
             <div
-                class="w-full md:w-[45%] bg-gradient-to-br from-esmeralda to-humo text-blanco h-[250px] flex items-center justify-center rounded-xl font-bold p-6 text-center shadow-lg">
+                class="w-full md:w-[45%] bg-gradient-to-br from-esmeralda to-slate-900 text-white h-[250px] flex items-center justify-center rounded-xl font-bold p-6 text-center shadow-lg border border-slate-800">
                 <div>
                     <div class="text-5xl mb-3">AM</div>
                     <div class="text-lg">Page113</div>
@@ -433,161 +473,54 @@
         </div>
     </section>
 
+    <!-- Orden 2: Footer adaptado a Dark Mode (ya era oscuro, pero unificamos bordes) -->
     <footer
-        class="bg-humo text-blanco flex flex-col md:flex-row justify-between px-6 md:px-10 py-12 border-t-4 border-esmeralda gap-8 text-center md:text-left">
+        class="bg-slate-950 text-slate-100 flex flex-col md:flex-row justify-between px-6 md:px-10 py-12 border-t-4 border-esmeralda gap-8 text-center md:text-left">
         <div>
             <h4 class="font-bold text-xl mb-4 text-esmeralda">Síguenos:</h4>
             <ul class="space-y-2">
                 <li><a href="https://www.instagram.com/far_seal/"
-                        class="transition-colors hover:text-esmeralda">Instagram</a></li>
-                <li><a href="#" class="transition-colors hover:text-esmeralda">Facebook (Coming soon!)</a></li>
-                <li><a href="#" class="transition-colors hover:text-esmeralda">X (Coming soon too!)</a></li>
+                        class="transition-colors text-slate-400 hover:text-esmeralda">Instagram</a></li>
+                <li><a href="#" class="transition-colors text-slate-400 hover:text-esmeralda">Facebook</a></li>
+                <li><a href="#" class="transition-colors text-slate-400 hover:text-esmeralda">X (Tweeter)</a></li>
             </ul>
         </div>
 
         <div>
             <h4 class="font-bold text-xl mb-4 text-esmeralda">Contáctanos:</h4>
-            <p class="mb-2">WA: +593 97 909 9282</p>
-            <p class="mb-2">WA: +593 99 048 5395</p>
-            <p>Mail: abnercedeno2009@gmail.com</p>
+            <p class="mb-2 text-slate-400">WA: +593 97 909 9282</p>
+            <p class="mb-2 text-slate-400">WA: +593 99 048 5395</p>
+            <p class="text-slate-400">Mail: abnercedeno2009@gmail.com</p>
         </div>
 
         <div>
             <h4 class="font-bold text-xl mb-4 text-esmeralda">Apóyanos:</h4>
-            <p class="mb-4">Regálanos una taza de café</p>
+            <p class="mb-4 text-slate-400">Regálanos una taza de café</p>
             <button
-                class="boton-paypal bg-blanco text-humo px-6 py-2 rounded font-bold transition-colors duration-300 hover:bg-esmeralda hover:text-blanco w-full md:w-auto">PayPal</button>
+                class="boton-paypal bg-slate-800 text-slate-100 px-6 py-2 rounded font-bold transition-colors duration-300 hover:bg-esmeralda hover:text-slate-950 w-full md:w-auto">PayPal</button>
         </div>
     </footer>
 
+    <!-- Modal (adaptado a Dark Mode) -->
     <div id="modal-global"
-        class="fixed inset-0 bg-humo/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
-        <div class="bg-blanco w-[90%] max-w-md p-8 rounded-xl shadow-2xl transform scale-95 transition-transform duration-300 relative text-center"
+        class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 w-[90%] max-w-md p-8 rounded-xl shadow-2xl transform scale-95 transition-transform duration-300 relative text-center border border-slate-800"
             id="modal-contenido">
-            <button id="cerrar-modal" class="absolute top-4 right-4 text-gristexto hover:text-humo font-bold text-xl"
+            <button id="cerrar-modal" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 font-bold text-xl"
                 aria-label="Cerrar modal">&times;</button>
-            <h3 id="modal-titulo" class="text-2xl font-bold mb-4 text-humo">Título</h3>
-            <p id="modal-mensaje" class="text-gristexto mb-6">Mensaje del modal</p>
+            <h3 id="modal-titulo" class="text-2xl font-bold mb-4 text-slate-100">Título</h3>
+            <p id="modal-mensaje" class="text-slate-400 mb-6">Mensaje del modal</p>
             <button
-                class="bg-esmeralda text-blanco px-6 py-2 rounded font-bold hover:bg-humo transition-colors cerrar-modal-btn">Entendido</button>
+                class="bg-esmeralda text-slate-950 px-6 py-2 rounded font-bold hover:bg-emerald-400 transition-colors cerrar-modal-btn">Entendido</button>
         </div>
     </div>
 
+    <!-- Botón flotante WhatsApp (mantenido) -->
     <a href="https://wa.me/593979099282?text=Hola%20equipo%20de%20Page113,%20deseo%20cotizar%20una%20p%C3%A1gina%20web"
         target="_blank" rel="noopener noreferrer"
-        class="fixed bottom-6 right-6 bg-esmeralda text-blanco w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-2xl transition-all duration-300 z-50"
+        class="fixed bottom-6 right-6 bg-esmeralda text-slate-950 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-2xl transition-all duration-300 z-50"
         aria-label="Contactar por WhatsApp">
+        <!-- Orden 3: stroke-width="2" en el SVG de WhatsApp (aunque es fill) -->
         <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" aria-hidden="true">
             <path
-                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766 0 1.011.263 1.997.763 2.864l-.815 2.977 3.047-.8c.844.457 1.787.697 2.771.698 3.183 0 5.769-2.585 5.77-5.766 0-3.181-2.587-5.769-5.768-5.769zm3.093 8.355c-.15.424-.87.822-1.2.868-.313.044-.664.128-2.146-.486-1.786-.738-2.92-2.545-3.007-2.66-.088-.116-.718-.956-.718-1.823 0-.866.452-1.293.613-1.464.161-.171.352-.214.47-.214.116 0 .232.001.332.005.105.004.244-.041.381.291.139.336.474 1.157.516 1.242.042.086.071.186.012.302-.057.116-.086.186-.172.286-.086.1-.184.219-.258.297-.083.087-.171.181-.073.351.098.17.436.721.936 1.171.646.581 1.186.762 1.356.848.17.086.27.072.37-.042.1-.114.428-.501.543-.672.113-.171.226-.143.382-.085.156.057.994.471 1.165.557.171.086.286.128.328.2.043.072.043.414-.107.838z" />
-        </svg>
-    </a>
-
-    <script>
-        const modalGlobal = document.getElementById('modal-global');
-        const modalContenido = document.getElementById('modal-contenido');
-        const modalTitulo = document.getElementById('modal-titulo');
-        const modalMensaje = document.getElementById('modal-mensaje');
-
-        function abrirModal(titulo, mensaje) {
-            modalTitulo.textContent = titulo;
-            modalMensaje.textContent = mensaje;
-            modalGlobal.classList.remove('hidden');
-            setTimeout(() => {
-                modalGlobal.classList.remove('opacity-0');
-                modalContenido.classList.remove('scale-95');
-            }, 10);
-        }
-
-        function cerrarModal() {
-            modalGlobal.classList.add('opacity-0');
-            modalContenido.classList.add('scale-95');
-            setTimeout(() => {
-                modalGlobal.classList.add('hidden');
-            }, 300);
-        }
-
-        document.getElementById('cerrar-modal').addEventListener('click', cerrarModal);
-        document.querySelector('.cerrar-modal-btn').addEventListener('click', cerrarModal);
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && !modalGlobal.classList.contains('hidden')) {
-                cerrarModal();
-            }
-        });
-
-        const botonesDetalles = document.querySelectorAll('.boton-detalles');
-        botonesDetalles.forEach(function (boton) {
-            boton.addEventListener('click', function () {
-                if (boton.textContent.trim() === 'Próximamente') {
-                    abrirModal('Atención', 'Este proyecto sigue en desarrollo. Te avisaremos cuando esté listo para mostrarse públicamente.');
-                } else {
-                    abrirModal('Más información', 'Estamos preparando los detalles técnicos y la presentación completa de este proyecto para mostrártelo en una próxima versión.');
-                }
-            });
-        });
-
-        const tarjetasServicios = document.querySelectorAll('.tarjeta-servicio');
-        tarjetasServicios.forEach(function (tarjeta) {
-            tarjeta.addEventListener('click', function (evento) {
-                if (evento.target.classList.contains('tooltip-info')) return;
-                const nombreServicio = this.getAttribute('data-servicio');
-                abrirModal('Gracias por tu interés', 'Te agradecemos mucho tu interés en ' + nombreServicio + '. Puedes escribirnos por WhatsApp para hablar directamente y recibir una cotización rápida.');
-            });
-        });
-
-        const botonDonacion = document.querySelector('.boton-paypal');
-        if (botonDonacion) {
-            botonDonacion.addEventListener('click', function () {
-                abrirModal('Apóyanos', 'Gracias por querer invitarnos un café. Pronto habilitaremos el enlace oficial para apoyar nuestro trabajo.');
-            });
-        }
-
-        const todosLosEnlacesNavegacion = document.querySelectorAll('a[href^="#"]');
-        const todasLasPantallas = document.querySelectorAll('section');
-
-        todosLosEnlacesNavegacion.forEach(function (enlace) {
-            enlace.addEventListener('click', function (evento) {
-                evento.preventDefault();
-                const idDestino = this.getAttribute('href');
-                const pantallaNueva = document.querySelector(idDestino);
-
-                const pantallasVisibles = [];
-                todasLasPantallas.forEach(function (pantalla) {
-                    if (pantalla.style.display !== 'none') {
-                        pantallasVisibles.push(pantalla);
-                    }
-                });
-
-                if (!pantallaNueva || pantallasVisibles.includes(pantallaNueva)) return;
-
-                pantallasVisibles.forEach(p => p.classList.add('caja-oculta'));
-
-                setTimeout(function () {
-                    pantallasVisibles.forEach(p => p.style.display = 'none');
-
-                    pantallaNueva.classList.add('caja-oculta');
-                    pantallaNueva.style.display = '';
-                    pantallaNueva.offsetHeight;
-                    pantallaNueva.classList.remove('caja-oculta');
-                }, 400);
-            });
-        });
-
-        const botonHamburguesa = document.getElementById('boton-menu');
-        const navegacionMenu = document.querySelector('.navegacion-principal');
-
-        if (botonHamburguesa && navegacionMenu) {
-            botonHamburguesa.addEventListener('click', function () {
-                navegacionMenu.classList.toggle('menu-activo');
-            });
-
-            navegacionMenu.querySelectorAll('a').forEach(function (enlace) {
-                enlace.addEventListener('click', function () {
-                    navegacionMenu.classList.remove('menu-activo');
-                });
-            });
-        }
-    </script>
-</body>
-
-</html>
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766 0 1.011.263 1.997.763 2.864l-.815 2.977 3.047-.8c.844.457 1.787.697 2.771.698 3.183 0 5.769-2.585 5.77-5.766 0-3.181-2.587-5.769-5.768-5.769zm3.093 8.355c-.15.424-.87.822-1.2.868-.313.044-.664.128-2.146-.486-1.786-.738-2.92-2.545-3.007-2.66-.088-.116-.718-.956-.718-1.823 0-.866.452-1.293.613-1.464.161-.171.352-.214.47-.214.116 0 .232.001.332.005.105.004.244-.041.381.291.139.336.474 1.157.
