@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Servicio de desarrollo de páginas web en Santo Domingo. Creación de sitios web rápidos, accesibles y personalizados para emprendimientos con soporte post-entrega.">
+    <meta name="description"
+        content="Servicio de desarrollo de páginas web en Santo Domingo. Creación de sitios web rápidos, accesibles y personalizados para emprendimientos con soporte post-entrega.">
     <meta property="og:title" content="Page113 - Desarrollo Web para Emprendedores">
-    <meta property="og:description" content="Impulsa tu negocio con una página web profesional. Trato directo, precios accesibles y entregas rápidas.">
+    <meta property="og:description"
+        content="Impulsa tu negocio con una página web profesional. Trato directo, precios accesibles y entregas rápidas.">
+    <!-- TODO: reemplazar por la URL real de tu imagen de vista previa -->
     <meta property="og:image" content="https://tudominio.com/ruta-a-imagen-de-vista-previa.jpg">
     <meta property="og:type" content="website">
     <title>Page113 | Desarrollo Web para Profesionales</title>
@@ -14,7 +17,8 @@
     <link rel="icon" href="logo-ac.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -35,326 +39,394 @@
             }
         }
     </script>
-
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        .caja-oculta {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .caja-animada {
-            transition: opacity 0.5s ease-in-out;
-            opacity: 1;
-        }
-
-        .menu-activo {
-            display: flex !important;
-        }
-
-        .mockup-browser {
-            background: #ffffff;
-            border: 1px solid rgba(26, 26, 26, 0.08);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(26, 26, 26, 0.12);
-        }
-
-        .mockup-bar {
-            height: 42px;
-            background: #f4f6f7;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0 14px;
-            border-bottom: 1px solid rgba(26, 26, 26, 0.08);
-        }
-
-        .mockup-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 999px;
-            display: inline-block;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="font-sans bg-slate-950 text-slate-100 pt-[100px] antialiased">
-    <header class="fixed top-0 left-0 w-full bg-slate-900 flex justify-between items-center px-6 md:px-10 py-4 border-b border-slate-800 z-50">
-        <button id="boton-menu" class="md:hidden text-3xl text-slate-100 focus:outline-none" aria-label="Abrir menú">
-            <span>&#9776;</span>
+
+    <!-- ================= HEADER ================= -->
+    <header
+        class="fixed top-0 left-0 w-full bg-slate-900 flex justify-between items-center px-6 md:px-10 py-4 border-b border-slate-800 z-50">
+        <button id="boton-menu" class="md:hidden text-3xl text-slate-100 focus:outline-none" aria-label="Abrir menú"
+            aria-expanded="false">
+            <span id="icono-menu">&#9776;</span>
         </button>
 
-        <nav class="navegacion-principal hidden md:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-slate-900 md:bg-transparent px-6 py-6 md:p-0 gap-6 md:gap-12 border-b-4 border-esmeralda md:border-none shadow-lg md:shadow-none text-center">
-            <a href="#inicio" class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Inicio</a>
-            <a href="#servicios" class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Servicios</a>
-            <a href="#portafolio" class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Portafolio</a>
-            <a href="#nosotros" class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Nosotros</a>
+        <nav id="navegacion-principal"
+            class="navegacion-principal hidden md:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-slate-900 md:bg-transparent px-6 py-6 md:p-0 gap-6 md:gap-12 border-b-4 border-esmeralda md:border-none shadow-lg md:shadow-none text-center">
+            <a href="#inicio"
+                class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Inicio</a>
+            <a href="#servicios"
+                class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Servicios</a>
+            <a href="#portafolio"
+                class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Portafolio</a>
+            <a href="#nosotros"
+                class="text-slate-300 font-bold transition-colors duration-300 hover:text-esmeralda">Nosotros</a>
         </nav>
 
-        <img src="logo-ac.png" alt="Logo page113" class="w-12 md:w-[60px] h-auto object-contain">
+        <a href="#inicio" aria-label="Ir al inicio">
+            <img src="logo-ac.png" alt="Logo page113" class="w-12 md:w-[60px] h-auto object-contain">
+        </a>
     </header>
 
-    <section id="inicio" class="caja-animada">
-        <div class="max-w-4xl mx-auto px-6 pt-12 pb-16 text-center flex flex-col items-center">
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                Desarrollo Web Especializado
-            </span>
+    <!-- ================= VISTA: INICIO ================= -->
+    <div id="vista-inicio" class="vista">
+        <section id="inicio" class="caja-animada">
+            <div class="max-w-4xl mx-auto px-6 pt-12 pb-16 text-center flex flex-col items-center">
+                <span
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Desarrollo Web Especializado
+                </span>
 
-            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                Webs de alto impacto para <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">profesionales exigentes</span>
-            </h1>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    Webs de alto impacto para <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">profesionales
+                        exigentes</span>
+                </h1>
 
-            <p class="text-lg sm:text-xl text-slate-400 max-w-2xl font-normal leading-relaxed mb-8">
-                Transformamos tu trayectoria en una presencia digital elegante, ultra rápida y diseñada para convertir visitantes en clientes de alto valor.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12">
-                <a href="#contacto" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-all shadow-lg shadow-emerald-500/20 text-center">
-                    Cotizar mi proyecto
-                </a>
-                <a href="#portafolio" class="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold transition-all text-center">
-                    Ver trabajos previos
-                </a>
-            </div>
-
-            <div class="pt-8 border-t border-slate-800/80 w-full grid grid-cols-2 md:grid-cols-3 gap-4 text-slate-400 text-sm">
-                <div><strong class="text-white block text-lg font-bold">100%</strong> Optimizado para móviles</div>
-                <div><strong class="text-white block text-lg font-bold">&lt; 1.5s</strong> Tiempo de carga</div>
-                <div class="col-span-2 md:col-span-1"><strong class="text-white block text-lg font-bold">SEO</strong> Listo para Google</div>
-            </div>
-        </div>
-
-        <!-- SECCIÓN REDUCIDA: TECNOLOGÍAS EN FORMATO DE INSIGNIAS MINIMALISTAS -->
-        <div class="py-8 w-full max-w-4xl mx-auto border-t border-slate-800 text-center px-6">
-            <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Tecnologías que dominamos</p>
-            <div class="flex flex-wrap justify-center items-center gap-3">
-                <span class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">HTML5</span>
-                <span class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">Tailwind CSS</span>
-                <span class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">JavaScript</span>
-                <span class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">Python</span>
-                <span class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">Godot Engine</span>
-            </div>
-        </div>
-
-        <div class="bg-slate-900 rounded-xl text-center px-6 md:px-10 py-16 mx-6 md:mx-10 my-16 shadow-sm border border-slate-800">
-            <h2 class="text-3xl font-bold mb-3 text-slate-100">Lo que construimos en Page113</h2>
-            <p class="text-slate-400 mb-12">Soluciones web rápidas, modernas y personalizadas para potenciar tus proyectos.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-                <div class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
-                    <span class="text-4xl block mb-4">💻</span>
-                    <h3 class="font-bold text-xl mb-3 text-slate-100">Desarrollo Web</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Páginas web funcionales, claras y pensadas para vender mejor tu oferta.</p>
-                </div>
-
-                <div class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
-                    <span class="text-4xl block mb-4">⚡</span>
-                    <h3 class="font-bold text-xl mb-3 text-slate-100">Diseño UI/UX</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Interfaces simples, amigables y enfocadas en que tu cliente compre o contacte.</p>
-                </div>
-
-                <div class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
-                    <span class="text-4xl block mb-4">🚀</span>
-                    <h3 class="font-bold text-xl mb-3 text-slate-100">Alojamiento</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Preparación para dejar tu sitio publicado y listo para crecer.</p>
-                </div>
-
-                <!-- Tarjeta con marco equilibrado y SVG nativo de soporte (Sin bug de emoji) -->
-                <div class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
-                    <div class="w-10 h-10 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-                    </div>
-                    <h3 class="font-bold text-xl mb-3 text-slate-100">Soporte Post-Entrega</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Acompañamiento real después de la entrega para que no te sientas solo con tu proyecto.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="como-trabajamos" class="px-6 md:px-10 py-20 bg-slate-950">
-        <div class="max-w-5xl mx-auto text-center">
-            <p class="text-esmeralda font-bold uppercase tracking-widest mb-4">Cómo trabajamos</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-slate-100">Un proceso claro para que no te quedes con dudas</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
-                    <div class="w-12 h-12 rounded-full bg-esmeralda text-slate-950 flex items-center justify-center font-bold text-xl mx-auto mb-5">1</div>
-                    <h3 class="font-bold text-xl mb-3 text-slate-100">Diagnóstico</h3>
-                    <p class="text-slate-400 leading-relaxed">Analizamos tu negocio, objetivos y propuesta para definir la estrategia digital correcta.</p>
-                </div>
-
-                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
-                    <div class="w-12 h-12 rounded-full bg-esmeralda text-slate-950 flex items-center justify-center font-bold text-xl mx-auto mb-5">2</div>
-                    <h3 class="font-bold text-xl mb-3 text-slate-100">Desarrollo</h3>
-                    <p class="text-slate-400 leading-relaxed">Diseñamos y programamos una web clara, moderna y funcional para tu marca.</p>
-                </div>
-
-                <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
-                    <div class="w-12 h-12 rounded-full bg-esmeralda text-slate-950 flex items-center justify-center font-bold text-xl mx-auto mb-5">3</div>
-                    <h3 class="font-bold text-xl mb-3 text-slate-100">Entrega y Soporte</h3>
-                    <p class="text-slate-400 leading-relaxed">Te entregamos tu proyecto listo y te acompañamos después para que sigas tranquilo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicios" class="caja-animada py-20 bg-slate-950">
-        <div class="w-full max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-100 mb-4">Nuestros Servicios</h2>
-                <p class="text-lg text-slate-400 max-w-2xl mx-auto">Soluciones de software estructuradas, escalables y diseñadas para destacar.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-800 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
-                    <div class="w-16 h-16 bg-esmeralda/10 text-esmeralda rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-100 mb-3">Desarrollo Web</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Arquitectura de sitios web informativos, rápidos y responsivos. Estructuramos código limpio para que tu mensaje llegue sin barreras.</p>
-                </div>
-
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-800 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
-                    <div class="w-16 h-16 bg-slate-800 text-slate-300 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-100 mb-3">Herramientas a Medida</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Desarrollo de utilidades de escritorio y automatización de procesos internos. Sistemas locales eficientes para optimizar tu flujo de trabajo.</p>
-                </div>
-
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-800 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
-                    <div class="w-16 h-16 bg-esmeralda/10 text-esmeralda rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-100 mb-3">Alto Rendimiento</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">Auditoría y optimización de código. Nos aseguramos de que cada interfaz renderice en milisegundos, evitando cargas innecesarias en el DOM.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- NUEVA CAJA INTERACTIVA: ENVÍO DE IDEAS RÁPIDAS (Inspiración Torisoftt) -->
-        <div class="max-w-2xl mx-auto my-16 bg-slate-900 border border-slate-800 p-8 rounded-2xl text-left shadow-lg mx-4 md:mx-auto">
-            <h3 class="text-xl font-bold text-white mb-2">¿Tienes una idea en mente?</h3>
-            <p class="text-slate-400 text-sm mb-4">Cuéntanos brevemente qué necesitas y te conectamos de inmediato por WhatsApp.</p>
-            <div class="flex flex-col sm:flex-row gap-3">
-                <input type="text" id="idea-cliente" placeholder="Ej: Necesito una web para mi negocio..." class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500">
-                <button type="button" onclick="enviarIdeaWhatsApp()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-all">Enviar idea</button>
-            </div>
-        </div>
-
-        <div class="pb-20 text-center px-6 mt-10">
-            <p class="mb-4 text-slate-400">¿No estás seguro de cómo se verá? Revisa nuestro portafolio.</p>
-            <a href="#portafolio" class="inline-block bg-slate-800 text-slate-100 px-8 py-3 rounded font-bold transition-colors duration-300 hover:bg-esmeralda hover:text-slate-950">Ver portafolio</a>
-        </div>
-    </section>
-
-    <section id="portafolio" class="caja-animada px-6 md:px-10 py-20 text-center bg-slate-950" style="display: none;">
-        <h2 class="text-3xl font-bold mb-12 text-slate-100">Nuestro trabajo</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-slate-900 p-6 rounded-xl flex flex-col items-center border border-slate-800 transition-colors hover:border-esmeralda">
-                <p class="font-bold mb-4 text-slate-100">Proyecto MS</p>
-                <div class="mockup-browser w-full mb-6">
-                    <div class="mockup-bar">
-                        <span class="mockup-dot bg-red-400"></span>
-                        <span class="mockup-dot bg-yellow-400"></span>
-                        <span class="mockup-dot bg-green-400"></span>
-                    </div>
-                    <div class="bg-slate-800 p-4">
-                        <img src="logo-ms.png" alt="Proyecto MS" class="w-full h-[150px] object-contain">
-                    </div>
-                </div>
-                <p class="text-sm text-slate-400 mb-6">Branding y mockup para una propuesta visual moderna.</p>
-                <button class="boton-detalles w-full border-2 border-slate-700 text-slate-300 py-2 rounded font-bold transition-colors duration-300 hover:bg-slate-700 hover:text-white">Detalles</button>
-            </div>
-
-            <div class="bg-slate-900 p-6 rounded-xl flex flex-col items-center border border-slate-800 transition-colors hover:border-esmeralda">
-                <p class="font-bold mb-4 text-slate-100">Proyecto Kid</p>
-                <div class="mockup-browser w-full mb-6">
-                    <div class="mockup-bar">
-                        <span class="mockup-dot bg-red-400"></span>
-                        <span class="mockup-dot bg-yellow-400"></span>
-                        <span class="mockup-dot bg-green-400"></span>
-                    </div>
-                    <div class="bg-gradient-to-br from-esmeralda/10 via-slate-800 to-slate-900 p-4">
-                        <div class="h-[150px] rounded-xl bg-slate-800 border border-dashed border-esmeralda/40 flex items-center justify-center text-slate-400 text-lg font-bold">Landing mockup</div>
-                    </div>
-                </div>
-                <p class="text-sm text-slate-400 mb-6">Diseño de concepto para plataforma infantil y educativa.</p>
-                <button class="boton-detalles w-full border-2 border-slate-700 text-slate-300 py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-slate-700 hover:text-white">Detalles</button>
-            </div>
-
-            <div class="bg-slate-900 p-6 rounded-xl flex flex-col items-center border border-slate-800 transition-colors hover:border-esmeralda">
-                <p class="font-bold mb-4 text-slate-100">Proyecto 3</p>
-                <div class="mockup-browser w-full mb-6">
-                    <div class="mockup-bar">
-                        <span class="mockup-dot bg-red-400"></span>
-                        <span class="mockup-dot bg-yellow-400"></span>
-                        <span class="mockup-dot bg-green-400"></span>
-                    </div>
-                    <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-esmeralda/10 p-4">
-                        <div class="h-[150px] rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 text-lg font-bold">Próximamente</div>
-                    </div>
-                </div>
-                <p class="text-sm text-slate-400 mb-6">Próximo proyecto en proceso para cartera web de la agencia.</p>
-                <button class="boton-detalles w-full border-2 border-slate-700 text-slate-300 py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-slate-700 hover:text-white">Próximamente</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="nosotros" class="caja-animada bg-slate-900 px-6 md:px-10 py-20" style="display: none;">
-        <h2 class="text-3xl font-bold text-center mb-16 text-slate-100">El origen de Page113</h2>
-
-        <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
-            <div class="w-full md:w-[45%]">
-                <p class="text-lg leading-relaxed text-slate-400 text-justify md:text-left">
-                    Page113 nació entre ideas, prototipos y la necesidad de crear algo útil para nuestro trabajo de grado. Cuando empezamos a construir soluciones web reales, descubrimos una pasión: ayudar a emprendedores a crecer sin perder tiempo en lo técnico.
+                <p class="text-lg sm:text-xl text-slate-400 max-w-2xl font-normal leading-relaxed mb-8">
+                    Transformamos tu trayectoria en una presencia digital elegante, ultra rápida y diseñada para
+                    convertir visitantes en clientes de alto valor.
                 </p>
-            </div>
-            <div class="w-full md:w-[45%] overflow-hidden rounded-xl shadow-lg border border-slate-800">
-                <img src="photo-abner.PNG" alt="Abner programando" class="w-full h-[250px] md:h-[320px] object-cover object-center">
-            </div>
-        </div>
 
-        <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-8">
-            <div class="w-full md:w-[45%]">
-                <p class="text-lg leading-relaxed text-slate-400 text-justify md:text-left">
-                    ¿Por qué 113? Porque <strong class="text-slate-100">A</strong> y <strong class="text-slate-100">M</strong> se convierten en una identidad. Ese código visual inspiró el nombre de la agencia y la forma en que representamos la creatividad y el trabajo en equipo: un dato técnico convertido en marca.
-                </p>
-            </div>
-            <div class="w-full md:w-[45%] bg-gradient-to-br from-esmeralda to-slate-900 text-white h-[250px] flex items-center justify-center rounded-xl font-bold p-6 text-center shadow-lg border border-slate-800">
-                <div>
-                    <div class="text-5xl mb-3">AM</div>
-                    <div class="text-lg">Page113</div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12">
+                    <a href="#contacto"
+                        class="enlace-vista px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-all shadow-lg shadow-emerald-500/20 text-center">
+                        Cotizar mi proyecto
+                    </a>
+                    <a href="#portafolio"
+                        class="enlace-vista px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold transition-all text-center">
+                        Ver trabajos previos
+                    </a>
+                </div>
+
+                <div
+                    class="pt-8 border-t border-slate-800/80 w-full grid grid-cols-2 md:grid-cols-3 gap-4 text-slate-400 text-sm">
+                    <div><strong class="text-white block text-lg font-bold">100%</strong> Optimizado para móviles</div>
+                    <div><strong class="text-white block text-lg font-bold">&lt; 1.5s</strong> Tiempo de carga</div>
+                    <div class="col-span-2 md:col-span-1"><strong
+                            class="text-white block text-lg font-bold">SEO</strong> Listo para Google</div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="contacto" class="bg-slate-950 px-6 md:px-10 py-20 text-center border-t border-slate-800" style="display: none;">
-        <div class="max-w-3xl mx-auto">
-            <p class="text-esmeralda font-bold uppercase tracking-widest mb-4">Contáctanos</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-100">Hablemos sobre tu próximo proyecto</h2>
-            <p class="text-slate-400 mb-8">Te ayudamos a convertir tu idea en una presencia digital sólida, rápida y bien posicionada.</p>
-            <a href="https://wa.me/593979099282?text=Hola%20equipo%20de%20Page113,%20deseo%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-500 text-slate-950 px-8 py-4 rounded-xl font-bold shadow-lg shadow-emerald-500/20 hover:bg-emerald-400 transition-all">Cotizar por WhatsApp</a>
-        </div>
-    </section>
+            <!-- Tecnologías -->
+            <div class="py-8 w-full max-w-4xl mx-auto border-t border-slate-800 text-center px-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Tecnologías que dominamos</p>
+                <div class="flex flex-wrap justify-center items-center gap-3">
+                    <span
+                        class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">HTML5</span>
+                    <span
+                        class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">Tailwind
+                        CSS</span>
+                    <span
+                        class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">JavaScript</span>
+                    <span
+                        class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">Python</span>
+                    <span
+                        class="px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-semibold text-slate-300">Godot
+                        Engine</span>
+                </div>
+            </div>
 
-    <footer class="bg-slate-950 text-slate-100 flex flex-col md:flex-row justify-between px-6 md:px-10 py-12 border-t-4 border-esmeralda gap-8 text-center md:text-left">
+            <!-- Lo que construimos -->
+            <div
+                class="bg-slate-900 rounded-xl text-center px-6 md:px-10 py-16 mx-6 md:mx-10 my-16 shadow-sm border border-slate-800">
+                <h2 class="text-3xl font-bold mb-3 text-slate-100">Lo que construimos en Page113</h2>
+                <p class="text-slate-400 mb-12">Soluciones web rápidas, modernas y personalizadas para potenciar tus
+                    proyectos.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                    <div
+                        class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
+                        <span class="text-4xl block mb-4">💻</span>
+                        <h3 class="font-bold text-xl mb-3 text-slate-100">Desarrollo Web</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Páginas web funcionales, claras y pensadas
+                            para vender mejor tu oferta.</p>
+                    </div>
+
+                    <div
+                        class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
+                        <span class="text-4xl block mb-4">⚡</span>
+                        <h3 class="font-bold text-xl mb-3 text-slate-100">Diseño UI/UX</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Interfaces simples, amigables y enfocadas en
+                            que tu cliente compre o contacte.</p>
+                    </div>
+
+                    <div
+                        class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
+                        <span class="text-4xl block mb-4">🚀</span>
+                        <h3 class="font-bold text-xl mb-3 text-slate-100">Alojamiento</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Preparación para dejar tu sitio publicado y
+                            listo para crecer.</p>
+                    </div>
+
+                    <div
+                        class="bg-slate-950 p-8 rounded-xl border border-slate-800 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-emerald-500/50">
+                        <div
+                            class="w-10 h-10 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-slate-100">Soporte Post-Entrega</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Acompañamiento real después de la entrega para
+                            que no te sientas solo con tu proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo trabajamos -->
+        <section id="como-trabajamos" class="px-6 md:px-10 py-20 bg-slate-950">
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="text-esmeralda font-bold uppercase tracking-widest mb-4">Cómo trabajamos</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-slate-100">Un proceso claro para que no te quedes
+                    con dudas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
+                        <div
+                            class="w-12 h-12 rounded-full bg-esmeralda text-slate-950 flex items-center justify-center font-bold text-xl mx-auto mb-5">
+                            1</div>
+                        <h3 class="font-bold text-xl mb-3 text-slate-100">Diagnóstico</h3>
+                        <p class="text-slate-400 leading-relaxed">Analizamos tu negocio, objetivos y propuesta para
+                            definir la estrategia digital correcta.</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
+                        <div
+                            class="w-12 h-12 rounded-full bg-esmeralda text-slate-950 flex items-center justify-center font-bold text-xl mx-auto mb-5">
+                            2</div>
+                        <h3 class="font-bold text-xl mb-3 text-slate-100">Desarrollo</h3>
+                        <p class="text-slate-400 leading-relaxed">Diseñamos y programamos una web clara, moderna y
+                            funcional para tu marca.</p>
+                    </div>
+
+                    <div class="bg-slate-900 p-8 rounded-xl border border-slate-800">
+                        <div
+                            class="w-12 h-12 rounded-full bg-esmeralda text-slate-950 flex items-center justify-center font-bold text-xl mx-auto mb-5">
+                            3</div>
+                        <h3 class="font-bold text-xl mb-3 text-slate-100">Entrega y Soporte</h3>
+                        <p class="text-slate-400 leading-relaxed">Te entregamos tu proyecto listo y te acompañamos
+                            después para que sigas tranquilo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="caja-animada py-20 bg-slate-950">
+            <div class="w-full max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-100 mb-4">Nuestros Servicios</h2>
+                    <p class="text-lg text-slate-400 max-w-2xl mx-auto">Soluciones de software estructuradas, escalables
+                        y diseñadas para destacar.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-800 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-esmeralda/10 text-esmeralda rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-100 mb-3">Desarrollo Web</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">Arquitectura de sitios web informativos, rápidos
+                            y responsivos. Estructuramos código limpio para que tu mensaje llegue sin barreras.</p>
+                    </div>
+
+                    <div
+                        class="bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-800 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-slate-800 text-slate-300 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-100 mb-3">Herramientas a Medida</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">Desarrollo de utilidades de escritorio y
+                            automatización de procesos internos. Sistemas locales eficientes para optimizar tu flujo de
+                            trabajo.</p>
+                    </div>
+
+                    <div
+                        class="bg-slate-900 p-8 rounded-3xl shadow-lg border border-slate-800 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-esmeralda/10 text-esmeralda rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-100 mb-3">Alto Rendimiento</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">Auditoría y optimización de código. Nos
+                            aseguramos de que cada interfaz renderice en milisegundos, evitando cargas innecesarias en
+                            el DOM.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caja de ideas rápidas -->
+            <div
+                class="max-w-2xl mx-auto my-16 bg-slate-900 border border-slate-800 p-8 rounded-2xl text-left shadow-lg mx-4 md:mx-auto">
+                <h3 class="text-xl font-bold text-white mb-2">¿Tienes una idea en mente?</h3>
+                <p class="text-slate-400 text-sm mb-4">Cuéntanos brevemente qué necesitas y te conectamos de inmediato
+                    por WhatsApp.</p>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <input type="text" id="idea-cliente" placeholder="Ej: Necesito una web para mi negocio..."
+                        class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500">
+                    <button type="button" id="boton-enviar-idea"
+                        class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-all">Enviar
+                        idea</button>
+                </div>
+            </div>
+
+            <div class="pb-20 text-center px-6 mt-10">
+                <p class="mb-4 text-slate-400">¿No estás seguro de cómo se verá? Revisa nuestro portafolio.</p>
+                <a href="#portafolio"
+                    class="enlace-vista inline-block bg-slate-800 text-slate-100 px-8 py-3 rounded font-bold transition-colors duration-300 hover:bg-esmeralda hover:text-slate-950">Ver
+                    portafolio</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= VISTA: PORTAFOLIO ================= -->
+    <div id="vista-portafolio" class="vista hidden">
+        <section id="portafolio" class="caja-animada px-6 md:px-10 py-20 text-center bg-slate-950">
+            <h2 class="text-3xl font-bold mb-12 text-slate-100">Nuestro trabajo</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-slate-900 p-6 rounded-xl flex flex-col items-center border border-slate-800 transition-colors hover:border-esmeralda">
+                    <p class="font-bold mb-4 text-slate-100">Proyecto MS</p>
+                    <div class="mockup-browser w-full mb-6">
+                        <div class="mockup-bar">
+                            <span class="mockup-dot bg-red-400"></span>
+                            <span class="mockup-dot bg-yellow-400"></span>
+                            <span class="mockup-dot bg-green-400"></span>
+                        </div>
+                        <div class="bg-slate-800 p-4">
+                            <img src="logo-ms.png" alt="Proyecto MS" class="w-full h-[150px] object-contain">
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-6">Branding y mockup para una propuesta visual moderna.</p>
+                    <button
+                        class="boton-detalles w-full border-2 border-slate-700 text-slate-300 py-2 rounded font-bold transition-colors duration-300 hover:bg-slate-700 hover:text-white">Detalles</button>
+                </div>
+
+                <div
+                    class="bg-slate-900 p-6 rounded-xl flex flex-col items-center border border-slate-800 transition-colors hover:border-esmeralda">
+                    <p class="font-bold mb-4 text-slate-100">Proyecto Kid</p>
+                    <div class="mockup-browser w-full mb-6">
+                        <div class="mockup-bar">
+                            <span class="mockup-dot bg-red-400"></span>
+                            <span class="mockup-dot bg-yellow-400"></span>
+                            <span class="mockup-dot bg-green-400"></span>
+                        </div>
+                        <div class="bg-gradient-to-br from-esmeralda/10 via-slate-800 to-slate-900 p-4">
+                            <div
+                                class="h-[150px] rounded-xl bg-slate-800 border border-dashed border-esmeralda/40 flex items-center justify-center text-slate-400 text-lg font-bold">
+                                Landing mockup</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-6">Diseño de concepto para plataforma infantil y educativa.</p>
+                    <button
+                        class="boton-detalles w-full border-2 border-slate-700 text-slate-300 py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-slate-700 hover:text-white">Detalles</button>
+                </div>
+
+                <div
+                    class="bg-slate-900 p-6 rounded-xl flex flex-col items-center border border-slate-800 transition-colors hover:border-esmeralda">
+                    <p class="font-bold mb-4 text-slate-100">Proyecto 3</p>
+                    <div class="mockup-browser w-full mb-6">
+                        <div class="mockup-bar">
+                            <span class="mockup-dot bg-red-400"></span>
+                            <span class="mockup-dot bg-yellow-400"></span>
+                            <span class="mockup-dot bg-green-400"></span>
+                        </div>
+                        <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-esmeralda/10 p-4">
+                            <div
+                                class="h-[150px] rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 text-lg font-bold">
+                                Próximamente</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-6">Próximo proyecto en proceso para cartera web de la agencia.
+                    </p>
+                    <button
+                        class="boton-detalles w-full border-2 border-slate-700 text-slate-300 py-2 rounded font-bold mt-auto transition-colors duration-300 hover:bg-slate-700 hover:text-white">Próximamente</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= VISTA: NOSOTROS ================= -->
+    <div id="vista-nosotros" class="vista hidden">
+        <section id="nosotros" class="caja-animada bg-slate-900 px-6 md:px-10 py-20">
+            <h2 class="text-3xl font-bold text-center mb-16 text-slate-100">El origen de Page113</h2>
+
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
+                <div class="w-full md:w-[45%]">
+                    <p class="text-lg leading-relaxed text-slate-400 text-justify md:text-left">
+                        Page113 nació entre ideas, prototipos y la necesidad de crear algo útil para nuestro trabajo de
+                        grado. Cuando empezamos a construir soluciones web reales, descubrimos una pasión: ayudar a
+                        emprendedores a crecer sin perder tiempo en lo técnico.
+                    </p>
+                </div>
+                <div class="w-full md:w-[45%] overflow-hidden rounded-xl shadow-lg border border-slate-800">
+                    <img src="photo-abner.PNG" alt="Abner programando"
+                        class="w-full h-[250px] md:h-[320px] object-cover object-center">
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-8">
+                <div class="w-full md:w-[45%]">
+                    <p class="text-lg leading-relaxed text-slate-400 text-justify md:text-left">
+                        ¿Por qué 113? Porque <strong class="text-slate-100">A</strong> y <strong
+                            class="text-slate-100">M</strong> se convierten en una identidad. Ese código visual inspiró
+                        el nombre de la agencia y la forma en que representamos la creatividad y el trabajo en equipo:
+                        un dato técnico convertido en marca.
+                    </p>
+                </div>
+                <div
+                    class="w-full md:w-[45%] bg-gradient-to-br from-esmeralda to-slate-900 text-white h-[250px] flex items-center justify-center rounded-xl font-bold p-6 text-center shadow-lg border border-slate-800">
+                    <div>
+                        <div class="text-5xl mb-3">AM</div>
+                        <div class="text-lg">Page113</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= VISTA: CONTACTO ================= -->
+    <div id="vista-contacto" class="vista hidden">
+        <section id="contacto" class="bg-slate-950 px-6 md:px-10 py-20 text-center border-t border-slate-800">
+            <div class="max-w-3xl mx-auto">
+                <p class="text-esmeralda font-bold uppercase tracking-widest mb-4">Contáctanos</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-100">Hablemos sobre tu próximo proyecto</h2>
+                <p class="text-slate-400 mb-8">Te ayudamos a convertir tu idea en una presencia digital sólida, rápida y
+                    bien posicionada.</p>
+                <a href="https://wa.me/593979099282?text=Hola%20equipo%20de%20Page113,%20deseo%20cotizar%20una%20p%C3%A1gina%20web"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-block bg-emerald-500 text-slate-950 px-8 py-4 rounded-xl font-bold shadow-lg shadow-emerald-500/20 hover:bg-emerald-400 transition-all">Cotizar
+                    por WhatsApp</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer
+        class="bg-slate-950 text-slate-100 flex flex-col md:flex-row justify-between px-6 md:px-10 py-12 border-t-4 border-esmeralda gap-8 text-center md:text-left">
         <div>
             <h4 class="font-bold text-xl mb-4 text-esmeralda">Síguenos:</h4>
             <ul class="space-y-2">
-                <li><a href="https://www.instagram.com/far_seal/" class="transition-colors text-slate-400 hover:text-esmeralda">Instagram</a></li>
+                <li><a href="https://www.instagram.com/far_seal/"
+                        class="transition-colors text-slate-400 hover:text-esmeralda">Instagram</a></li>
                 <li><a href="#" class="transition-colors text-slate-400 hover:text-esmeralda">Facebook</a></li>
                 <li><a href="#" class="transition-colors text-slate-400 hover:text-esmeralda">X (Tweeter)</a></li>
             </ul>
@@ -370,145 +442,38 @@
         <div>
             <h4 class="font-bold text-xl mb-4 text-esmeralda">Apóyanos:</h4>
             <p class="mb-4 text-slate-400">Regálanos una taza de café</p>
-            <button class="boton-paypal bg-slate-800 text-slate-100 px-6 py-2 rounded font-bold transition-colors duration-300 hover:bg-esmeralda hover:text-slate-950 w-full md:w-auto">PayPal</button>
+            <button
+                class="boton-paypal bg-slate-800 text-slate-100 px-6 py-2 rounded font-bold transition-colors duration-300 hover:bg-esmeralda hover:text-slate-950 w-full md:w-auto">PayPal</button>
         </div>
     </footer>
 
-    <div id="modal-global" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
-        <div class="bg-slate-900 w-[90%] max-w-md p-8 rounded-xl shadow-2xl transform scale-95 transition-transform duration-300 relative text-center border border-slate-800" id="modal-contenido">
-            <button id="cerrar-modal" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 font-bold text-xl" aria-label="Cerrar modal">&times;</button>
+    <!-- ================= MODAL GLOBAL ================= -->
+    <div id="modal-global"
+        class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 w-[90%] max-w-md p-8 rounded-xl shadow-2xl transform scale-95 transition-transform duration-300 relative text-center border border-slate-800"
+            id="modal-contenido">
+            <button id="cerrar-modal"
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 font-bold text-xl"
+                aria-label="Cerrar modal">&times;</button>
             <h3 id="modal-titulo" class="text-2xl font-bold mb-4 text-slate-100">Título</h3>
             <p id="modal-mensaje" class="text-slate-400 mb-6">Mensaje del modal</p>
-            <button class="bg-esmeralda text-slate-950 px-6 py-2 rounded font-bold hover:bg-emerald-400 transition-colors cerrar-modal-btn">Entendido</button>
+            <button
+                class="bg-esmeralda text-slate-950 px-6 py-2 rounded font-bold hover:bg-emerald-400 transition-colors cerrar-modal-btn">Entendido</button>
         </div>
     </div>
 
-    <a href="https://wa.me/593979099282?text=Hola%20equipo%20de%20Page113,%20deseo%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-esmeralda text-slate-950 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-2xl transition-all duration-300 z-50" aria-label="Contactar por WhatsApp">
-        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766 0 1.011.263 1.997.763 2.864l-.815 2.977 3.047-.8c.844.457 1.787.697 2.771.698 3.183 0 5.769-2.585 5.77-5.766 0-3.181-2.587-5.769-5.768-5.769zm3.093 8.355c-.15.424-.87.822-1.2.868-.313.044-.664.128-2.146-.486-1.786-.738-2.92-2.545-3.007-2.66-.088-.116-.718-.956-.718-1.823 0-.866.452-1.293.613-1.464.161-.171.352-.214.47-.214.116 0 .232.001.332.005.105.004.244-.041.381.291.139.336.474 1.157.614 1.38.138.223.298.258.488.323.189.067.403.091.562.058.17-.034.432-.183.684-.33.254-.147.594-.373.968-.585.375-.214.923-.996 1.028-1.533.104-.537.074-.957.05-1.131-.024-.174-.086-.22-.155-.285-.068-.064-.147-.104-.247-.182-.1-.078-.263-.124-.44-.186-.177-.061-.389-.223-.591-.461-.2-.236-.39-.53-.522-.79-.131-.261-.269-.346-.54-.376-.212-.019-.335-.023-.461-.023-.127 0-.274.009-.47.197-.196.189-.786.763-.786 1.865 0 1.1.807 2.171.923 2.324.116.153 1.563 2.357 3.789 3.3.529.228.942.359 1.267.458.533.159 1.017.136 1.398.083.426-.05 1.3-.533 1.483-1.049.183-.516.183-.96.128-1.05-.055-.09-.21-.123-.347-.216-.137-.093-.766-.411-1.449-.81-.682-.4-1.142-.654-1.292-.787-.15-.133-.296-.148-.473-.13-.17.017-.448.019-.687.151-.239.132-.92.87-1.058 1.083-.138.214-.263.234-.517.078-.254-.155-.915-.338-1.746-.92-.826-.582-1.383-1.301-1.548-1.519-.165-.218-.183-.486-.115-.713.067-.225.267-.518.419-.687.153-.171.342-.327.473-.541.131-.214.160-.427.177-.565.016-.137-.011-.285-.046-.406-.036-.122-.219-.298-.411-.481-.189-.184-.373-.374-.466-.61-.093-.235-.155-.363-.166-.501-.009-.137 0-.284.016-.403.016-.12.083-.335.226-.568.143-.233.455-.752.946-1.164.49-.41 1.142-.624 1.735-.644.593-.019 1.2.145 1.691.289.49.144 1.052.607 1.248 1.106.197.499.236.991.213 1.277-.024.286-.288.607-.676.998-.389.391-1.006.803-1.131 1.059-.125.255-.266.322-.502.457-.235.135-.59.216-.85.183-.259-.033-.557-.161-.849-.289-.292-.128-.651-.26-.974-.36-.322-.099-.653-.407-.874-.716-.221-.309-.371-.708-.429-1.114-.057-.406-.015-.691.121-.913.133-.218.309-.406.52-.607.212-.201.442-.369.668-.566.225-.197.434-.402.596-.647.163-.246.261-.554.187-.774-.073-.218-.276-.312-.492-.441-.215-.129-.235-.29-.108-.61.127-.32.214-.559.122-.783-.092-.224-.367-.398-.644-.526-.277-.129-.607-.239-.978-.268-.37-.028-.818.018-1.23.167-.412.149-.743.427-1.002.824-.258.396-.487 1.072-.521 1.794-.034.723.175 1.406.604 1.97.429.565.941 1.016 1.493 1.382.552.366 1.203.69 1.937.881.734.191 1.375.236 1.894.109.522-.126 1-.432 1.383-.9.383-.467.661-1.026.788-1.641.128-.615.133-1.211.031-1.696-.102-.485-.343-.987-.642-1.315-.299-.328-.677-.585-1.093-.741-.416-.156-.935-.191-1.46-.111-.525.08-1.02.322-1.42.696-.4.374-.713.913-.923 1.539-.209.626-.298 1.438-.235 2.092.063.654.261 1.225.608 1.694.347.468.844.854 1.411 1.13.566.276 1.245.42 1.881.339.637-.081 1.163-.351 1.467-.79.304-.438.498-.998.598-1.551.1-.553.101-1.141.021-1.626-.08-.485-.318-.94-.716-1.31-.399-.37-.905-.634-1.548-.728-.643-.094-1.291.002-1.835.294-.544.293-.997.73-1.269 1.236-.272.506-.376 1.097-.304 1.686.072.588.312 1.182.727 1.673.416.49.991.797 1.643.915.651.118 1.434.056 2.148-.193.713-.249 1.479-.725 2.103-1.32.625-.596 1.008-1.318 1.118-2.041.111-.725-.07-1.429-.456-2.035-.387-.606-.94-1.019-1.542-1.234-.602-.214-1.194-.233-1.747-.074-.553.158-1.024.506-1.391.988-.367.481-.627 1.091-.725 1.714-.097.623.046 1.274.309 1.906.263.631.699 1.17 1.247 1.528.548.359 1.206.563 1.87.537.665-.025 1.302-.258 1.846-.67.544-.412.985-.96 1.249-1.567.264-.607.376-1.241.296-1.886-.08-.646-.352-1.274-.758-1.799-.406-.524-.954-.936-1.59-1.176-.636-.24-1.321-.299-2.005-.134-.684.166-1.338.575-1.902 1.144-.563.568-.916 1.289-1.01 2.083-.094.794.022 1.619.353 2.354.331.734.881 1.387 1.557 1.901.676.514 1.48.87 2.331.93.851.061 1.675-.169 2.389-.661.714-.492 1.253-1.234 1.526-2.105.272-.872.263-1.85-.016-2.696-.279-.847-.77-1.598-1.411-2.182-.641-.584-1.432-1.036-2.343-1.326-.912-.29-1.928-.41-2.885-.345-.957.065-1.849.338-2.542.922-.693.585-1.189 1.46-1.411 2.379-.222.919-.152 1.928.225 2.809.378.881.977 1.665 1.74 2.309.763.644 1.706 1.111 2.724 1.355.975.246 2.063.261 3.112-.136.466-.176.91-.449 1.344-.848.432-.399.756-.876.94-1.351.184-.475.228-.98.135-1.475-.093-.496-.328-1.009-.734-1.38-.406-.37-.973-.582-1.62-.603-.647-.021-1.27.168-1.828.56-.559.391-1.083 1.05-1.37 1.646-.286.596-.39 1.334-.323 1.957.066.623.321 1.163.731 1.593.409.431.945.735 1.537.853.592.118 1.282.062 1.897-.203.615-.264 1.16-.734 1.51-1.257.351-.523.573-1.103.653-1.737.079-.634-.01-1.308-.331-1.907-.321-.598-.844-1.094-1.501-1.438-.658-.344-1.426-.55-2.198-.557-.773-.007-1.54.177-2.16.639-.621.462-1.1 1.19-1.336 1.969-.236.780-.175 1.683.164 2.521.34.837.955 1.56 1.751 2.052.796.492 1.71.702 2.633.652.923-.049 1.86-.343 2.687-.882.827-.539 1.537-1.321 2.062-2.254.524-.934.84-2.045.799-3.063-.041-1.018-.323-2.098-.91-2.966-.588-.867-1.409-1.739-2.491-2.344-1.081-.604-2.433-.863-3.759-.742-1.326.12-2.564.64-3.513 1.53-.949.891-1.585 2.183-1.65 3.501-.065 1.318.406 2.698 1.318 3.797.912 1.099 2.307 1.899 3.758 2.098 1.451.198 3.129-.168 4.466-.961.517-.3 1.012-.673 1.487-1.16.476-.487.914-1.104 1.273-1.752.358-.648.606-1.402.737-2.031.132-.628.143-1.171.033-1.609-.11-.438-.345-.826-.645-1.183-.299-.356-.706-.654-1.145-.869-.439-.214-.928-.335-1.432-.346-.502-.012-1.011.082-1.489.319-.479.237-.939.61-1.274 1.065-.335.456-.494 1.016-.476 1.69.018.673.225 1.437.648 2.006.423.568 1.175 1.009 1.85 1.248.675.238 1.364.28 2.031.163.667-.116 1.336-.434 1.838-.969.502-.535.817-1.281.857-2.011.04-.73-.193-1.557-.704-2.19-.512-.633-1.259-1.205-2.035-1.512-.776-.307-1.687-.35-2.477-.163-.79.188-1.543.653-2.051 1.215-.508.562-.814 1.267-.904 1.998-.091.732.12 1.596.62 2.356.499.759 1.282 1.393 2.128 1.74.846.347 1.87.39 2.714.137.844-.252 1.709-.785 2.333-1.484.625-.699 1.109-1.798.938-2.688-.171-.891-.579-1.719-1.253-2.291-.674-.572-1.591-.84-2.572-.761-.982.079-1.915.527-2.628 1.147-.713.62-1.215 1.465-1.431 2.39-.215.926-.11 1.968.403 2.82.515.852 1.246 1.532 2.186 1.94.939.408 2.053.537 3.087.292.825-.195 1.641-.642 2.324-1.291.684-.649 1.228-1.489 1.399-2.491.171-1.002-.018-2.1-.52-2.9-.504-.801-1.296-1.49-2.214-1.879-.917-.389-1.995-.511-3.004-.315-1.009.196-1.886.708-2.549 1.549-.663.841-1.06 1.96-1.147 3.134-.087 1.175.204 2.522.978 3.49.774.968 1.887 1.61 3.181 1.867 1.294.257 2.704.115 3.944-.45.734-.335 1.416-.789 1.951-1.4.536-.612.886-1.331 1.025-2.079.138-.749.08-1.57-.285-2.344-.365-.775-.943-1.454-1.654-1.902-.711-.447-1.55-.639-2.505-.535-.954.104-1.939.413-2.741 1.023-.802.61-1.678 1.583-2.032 2.514-.353.932-.281 2.038.247 2.801.528.761 1.355 1.38 2.378 1.756.526.193 1.165.319 1.803.321.638.003 1.279-.107 1.837-.396.558-.289 1.019-.753 1.35-1.312.332-.559.479-1.257.468-2.07-.012-.813-.232-1.677-.72-2.443-.489-.766-1.177-1.421-1.947-1.977-.769-.556-1.621-.95-2.533-1.116-.912-.166-1.863-.104-2.737.197-.874.301-1.647.923-2.172 1.723-.525.8-.79 1.814-.746 2.796.045.983.391 1.948 1.019 2.717.628.769 1.507 1.333 2.543 1.618.897.246 1.962.22 2.836-.149.875-.369 1.642-.963 2.165-1.751.523-.788.785-1.792.761-2.821-.024-1.028-.34-2.118-.96-2.92-.621-.801-1.536-1.436-2.637-1.753-.1-.028-.211-.045-.324-.056-.114-.011-.237-.015-.38-.022-.143-.006-.292-.015-.472-.028-.18-.012-.341-.03-.465-.045-.124-.015-.186-.021-.182-.013.038.015.015-.03-.014-.02.025-.005.038-.058.079-.11.028-.039.11-.078.174-.21.065-.133.137-.266.268-.446.13-.179.3-.344.541-.541.238-.198.557-.385.991-.565.433-.181.989-.323 1.66-.398.67-.074 1.375.02 2.03.363.656.343 1.217.949 1.544 1.648.326.699.383 1.53.163 2.293-.22.763-.718 1.409-1.394 1.92-.674.511-1.56.873-2.467.92-1.07.071-2.152-.25-2.979-.886-.827-.636-1.398-1.622-1.569-2.661-.171-1.039.086-2.2.79-3.1.705-.9 1.68-1.559 2.783-1.846.599-.159 1.23-.228 1.832-.196.602.031 1.2.17 1.725.481.524.311.971.796 1.252 1.357.284.562.401 1.271.318 1.969-.082.697-.352 1.322-.845 1.804-.495.48-1.22.828-1.934.98-.712.151-1.47.099-2.11-.191-.638-.29-1.124-.751-1.464-1.382-.34-.63-.52-1.44-.442-2.084.078-.644.408-1.386.976-1.951.568-.565 1.322-.937 2.195-1.008.874-.071 1.768.173 2.464.704.696.531 1.198 1.284 1.4 2.136.203.853.095 1.762-.338 2.404-.433.643-1.159 1.155-2.014 1.365-.855.209-1.734.119-2.481-.245-.747-.364-1.342-.998-1.629-1.718-.288-.721-.278-1.606.086-2.353.366-.747 1.025-1.394 1.801-1.681.776-.287 1.672-.206 2.377.267.706.473 1.261 1.322 1.408 2.214.148.892-.085 1.889-.722 2.601-.636.711-1.706 1.158-2.661 1.174-.955.016-1.98-.391-2.734-1.103-.754-.713-1.177-1.713-1.207-2.761-.031-1.048.332-2.098.995-2.897.664-.798 1.64-1.437 2.769-1.684.714-.157 1.438-.13 2.094.1.656.23 1.256.697 1.687 1.319.431.623.694 1.41.708 2.239.014.828-.232 1.686-.756 2.33-.524.644-1.364 1.098-2.233 1.225-.869.127-1.72-.112-2.301-.667-.582-.555-.985-1.386-.978-2.314.008-.928.427-1.817 1.101-2.413.674-.595 1.589-.9 2.512-.836.924.064 1.849.454 2.522 1.072.675.619 1.116 1.5 1.246 2.406.13.907-.052 1.918-.552 2.699-.5.782-1.275 1.455-2.219 1.8-.945.345-2.041.36-3.027.095-.986-.264-1.857-.96-2.457-1.923-.6-.963-.78-2.197-.434-3.329.346-1.132 1.162-2.199 2.232-2.866.96-.595 2.086-.902 3.132-.731 1.046.17 2.022.759 2.748 1.638.726.878 1.182 2.038 1.254 3.198.073 1.161-.234 2.297-.857 3.194-.624.896-1.566 1.571-2.639 1.933-.68.232-1.426.349-2.134.319-.709-.031-1.399-.173-1.992-.514-.592-.341-1.082-.84-1.428-1.438-.347-.598-.506-1.261-.49-1.962.016-.7.209-1.453.64-2.099.431-.646 1.036-1.214 1.715-1.606.695-.405 1.454-.615 2.22-.641.768-.027 1.56.145 2.177.627.617.483 1.08 1.236 1.288 2.048.209.812.167 1.623-.18 2.402-.348.778-.97 1.462-1.729 1.975-.759.513-1.715.847-2.658.923-.943.077-1.882-.133-2.712-.659-.815-.523-1.482-1.358-1.947-2.359-.465-1.001-.708-2.187-.53-3.315.178-1.128.696-2.159 1.541-2.94.845-.781 1.996-1.322 3.225-1.466 1.107-.131 2.234.076 3.218.722.984.646 1.769 1.672 2.177 2.862.409 1.19.414 2.518.07 3.755-.344 1.237-1.027 2.356-2.033 3.07-.927.657-2.069.942-3.203.867-1.081-.072-2.142-.449-3.04-1.145-.898-.696-1.635-1.705-1.876-2.811-.242-1.106-.082-2.203.475-3.327.556-1.124 1.645-2.12 2.838-2.658.661-.302 1.364-.492 2.086-.56.721-.067 1.455.002 2.206.266.751.263 1.424.752 1.947 1.428.524.677.874 1.558.968 2.535.094.976-.082 2.039-.562 2.845-.48.806-1.271 1.465-2.28 1.828-.1.035-.2.065-.302.093.016.051.031.101.045.152.13.48.209.973.207 1.419-.004.446-.107.839-.291 1.209-.185.371-.45.698-.785 1.006-.333.307-.733.564-1.19.736-.458.173-.977.252-1.521.219-.544-.034-1.09-.195-1.568-.53-.477-.334-.887-.84-1.16-1.489-.275-.649-.403-1.495-.351-2.602.052-1.106.31-2.471.726-3.555.416-1.084 1.047-2.022 1.879-2.633.831-.612 1.89-.901 2.986-.817 1.097.084 2.238.611 3.18 1.428.943.817 1.803 2.059 2.057 3.351.253 1.293.027 2.654-.647 3.752-.675 1.098-1.84 2.011-3.047 2.521-1.207.511-2.523.586-3.709.287-1.185-.298-2.172-.965-2.857-1.942-.685-.978-1.03-2.182-1.019-3.609.011-1.426.397-2.925 1.29-4.059.894-1.135 2.069-1.803 3.541-1.968.853-.095 1.769.006 2.666.325.897.319 1.731.832 2.426 1.499.696.666 1.212 1.552 1.456 2.523.245.971.225 2.061-.118 3.09-.344 1.029-.964 1.961-1.834 2.659-.87.698-1.895 1.028-2.886 1.005-.99-.023-1.937-.425-2.658-1.129-.72-.704-1.182-1.753-1.245-2.898-.063-1.145.176-2.433.817-3.461.641-1.028 1.704-1.784 2.877-2.162.438-.143.892-.239 1.353-.273.47-.034.928-.012 1.359.093.431.105.86.303 1.273.639.414.336.782.839 1.035 1.407.253.568.425 1.331.454 2.027.029.697-.045 1.327-.352 1.905-.306.579-.854 1.01-1.521 1.282-.666.272-1.481.365-2.231.189-.751-.176-1.433-.688-1.88-1.467-.447-.779-.72-1.929-.627-2.91.093-.98.543-1.844 1.295-2.522.75-.678 1.806-1.093 2.839-1.143.908-.043 1.81.174 2.531.656.721.481 1.228 1.211 1.513 2.095.285.884.267 1.87-.073 2.717-.338.846-.98 1.576-1.765 2.033-.785.456-1.709.682-2.582.705-.874.024-1.729-.118-2.421-.55-.693-.432-1.27-1.14-1.564-1.995-.296-.856-.283-1.985.079-2.905.363-.92 1.044-1.806 1.91-2.328.866-.522 1.921-.606 2.832-.234.912.371 1.845 1.292 2.232 2.386.389 1.093.38 2.40-.073 3.415-.454 1.015-1.333 1.87-2.452 2.34-1.118.469-2.395.54-3.483.155-1.088-.384-1.975-1.297-2.561-2.377-.585-1.08-.867-2.493-.593-3.826.275-1.333 1.149-2.413 2.225-3.167.609-.423 1.353-.738 2.124-.91.771-.172 1.578-.203 2.381-.081.803.121 1.586.447 2.19 1.028.605.581 1.046 1.339 1.241 2.154.196.814.116 1.687-.332 2.575-.452.889-1.234 1.692-2.256 2.15-1.022.459-2.278.488-3.273.067-.996-.422-1.757-1.302-2.231-2.362-.473-1.059-.648-2.446-.216-3.565.433-1.119 1.396-2.278 2.613-2.943.696-.38 1.457-.56 2.236-.595.779-.036 1.535.078 2.254.385.719.307 1.473.816 1.848 1.438.375.621.639 1.444.631 2.124-.009.68-.145 1.32-.51 1.922-.366.603-1.003 1.093-1.763 1.364-.761.272-1.614.369-2.405.267-.79-.102-1.548-.474-2.103-1.008-.556-.534-.96-1.257-1.108-2.119-.149-.862-.043-1.725.334-2.461.377-.736 1.019-1.426 1.797-1.836.779-.41 1.658-.566 2.545-.436.886.13 1.673.605 2.255 1.371.581.766.914 1.751.909 2.748-.005.997-.356 1.943-.966 2.539-.611.596-1.445.944-2.324 1.017-.879.073-1.717-.155-2.341-.742-.625-.586-1.003-1.45-1.072-2.439-.068-.989.185-2.018.764-2.869.579-.85 1.503-1.547 2.667-1.835.731-.181 1.569-.151 2.24.186.672.336 1.255.946 1.624 1.649.369.703.531 1.499.44 2.273-.091.774-.436 1.4-.987 1.894-.551.494-1.333.88-2.303 1.012-.969.132-2.059-.053-2.96-.651-.901-.597-1.661-1.566-1.894-2.573-.233-1.006-.089-2.159.506-3.127.595-.968 1.589-1.717 2.702-2.147.517-.198 1.049-.342 1.57-.431.522-.09 1.065-.11 1.524-.011.458.099.847.325 1.221.684.374.359.686.818.888 1.319.202.501.298 1.053.269 1.621-.029.568-.207 1.138-.556 1.637-.349.5-.857.907-1.425 1.143-.568.236-1.21.295-1.868.147-.658-.148-1.232-.568-1.641-1.191-.41-.623-.646-1.54-.517-2.37.13-.831.581-1.62 1.247-2.238.665-.617 1.44-1.051 2.399-1.27.959-.219 1.94-.209 2.844.091.904.301 1.716.915 2.269 1.775.553.861.822 1.926.736 2.999-.085 1.074-.52 2.122-1.257 2.997-.736.875-1.795 1.593-2.896 1.954-.761.25-1.577.362-2.379.325-.801-.037-1.624-.22-2.319-.659-.694-.439-1.27-1.198-1.578-2.143-.307-.946-.319-2.022-.176-3.225.143-1.203.603-2.403 1.343-3.257.74-.853 1.788-1.459 2.891-1.804.796-.252 1.681-.344 2.519-.252.837.092 1.677.479 2.4 1.091.722.611 1.259 1.545 1.497 2.665.238 1.119.206 2.208-.183 3.305-.389 1.097-1.155 2.063-2.147 2.611-.992.548-2.39.69-3.666.366-1.276-.323-2.47-1.351-3.17-2.727-.699-1.376-.744-3.164-.201-4.368.543-1.204 1.874-2.419 3.11-2.778.513-.149 1.072-.229 1.628-.248.556-.02 1.131.011 1.615.185.485.174.922.566 1.292 1.137.37.571.611 1.315.666 2.159.055.844-.123 1.741-.601 2.508-.479.767-1.26 1.355-2.102 1.642-.842.288-1.725.247-2.515-.082-.789-.329-1.537-.95-2.052-1.702-.516-.754-.738-1.646-.652-2.492.086-.846.487-1.645 1.111-2.196.625-.551 1.477-.922 2.415-.965.938-.043 1.779.348 2.337 1.039.559.690.958 1.592 1.004 2.387.046.794-.17 1.553-.602 2.183-.432.631-1.137 1.16-1.976 1.395-.84.235-1.824.176-2.69-.207-.866-.383-1.558-1.113-1.945-1.97-.386-.857-.434-1.869-.174-2.873.261-1.003.753-1.864 1.524-2.517.77-.652 1.717-1.016 2.73-.959.91.051 1.594.474 2.143 1.171.549.696.852 1.518.831 2.43-.021.913-.357 1.793-.916 2.481-.559.689-1.437 1.205-2.475 1.397-1.045.194-2.111-.02-2.866-.668-.756-.649-1.371-1.956-1.351-3.238.02-1.282.46-2.47 1.68-3.482 1.221-1.012 3.005-1.432 4.757-.917 1.751.514 3.165 1.778 3.776 3.357.611 1.579.345 3.414-.863 4.768-1.208 1.353-3.254 2.064-5.09 1.966-1.836-.099-3.673-.99-4.938-2.684-1.266-1.694-1.827-4.038-1.208-6.32.618-2.282 2.765-4.383 5.237-5.181 1.668-.542 3.276-.643 4.876-.088 1.756.609 3.293 2.035 4.193 3.839.899 1.804 1.032 4.078.338 6.184-.694 2.106-2.335 4.029-4.497 5.186-1.351.723-3.166 1.164-4.893 1.205-1.726.041-3.415-.31-4.92-1.322-1.441-.968-2.586-2.304-3.315-3.886-.73-1.582-.99-3.338-.831-5.122.158-1.784.687-3.568 1.698-5.023 1.011-1.454 2.48-2.612 4.236-3.299.98-.383 1.971-.548 2.93-.474 1.26.098 2.468.646 3.53 1.487.691.551 1.291 1.243 1.692 1.984.401.742.588 1.562.51 2.454-.078.893-.429 1.812-.964 2.565-.535.753-1.277 1.359-2.081 1.74-.804.381-1.696.502-2.615.392-.919-.11-1.8-.479-2.522-1.149-.721-.669-1.215-1.699-1.415-3.015-.2-1.317.061-2.745.781-3.642.719-.897 1.684-1.395 2.64-1.466.956-.071 1.906.31 2.496 1.246.591.937.706 2.064.382 3.2-.325 1.136-1.084 2.242-2.037 2.891-.953.649-2.303 1.233-3.602 1.04-1.298-.193-2.486-.935-3.381-2.113-.895-1.178-1.417-2.798-1.39-4.447.027-1.648.389-3.343 1.435-4.651 1.046-1.308 2.679-2.255 4.468-2.443.875-.092 1.763.016 2.587.332 1.465.559 2.742 1.705 3.558 3.171.817 1.467.992 3.53.336 5.04-.656 1.511-1.942 2.732-3.308 3.414-1.366.682-2.923.938-4.244.648-1.321-.289-2.344-1.122-3.072-2.388-.727-1.266-1.117-2.875-.936-4.599.181-1.724.857-3.438 2.172-4.847 1.316-1.409 3.201-2.533 5.079-2.92 1.103-.231 2.261-.302 3.338-.1 1.078.202 2.08.695 2.906 1.483.826.789 1.448 1.96 1.697 3.261.25 1.301.119 2.69-.55 3.67-.67.98-1.761 1.823-2.93 2.298-1.17.474-2.63.674-4.011.469-1.38-.205-2.502-.955-3.223-2.045-.721-1.091-.935-2.554-.663-3.845.272-1.29 1.184-2.483 2.58-3.196 1.396-.713 3.154-.909 4.952-.811 1.799.099 3.378 1.17 4.308 2.782.93 1.611 1.011 3.67.257 5.488-1.472 3.536-5.643 6.119-8.148 6.57-2.504.451-5.61.072-8.057-1.556-1.668-1.136-3.095-2.704-3.793-4.526-.698-1.822-.753-4.03-.103-5.782.65-1.753 2.166-3.283 4.072-4.175 1.906-.891 4.17-1.27 6.273-1.011 1.147.142 2.207.571 3.137 1.101 1.01.578 1.836 1.473 2.277 2.682.441 1.209.415 2.6-.006 3.77-.423 1.171-1.264 2.239-2.236 2.934-.971.694-2.193 1.12-3.522 1.189-1.327.068-2.693-.22-3.908-.979-1.216-.76-2.196-1.924-2.674-3.198-.478-1.274-.253-2.631.718-3.925.971-1.294 2.619-2.316 4.22-2.667.554-.122 1.109-.187 1.653-.176.542.011 1.052.095 1.521.241.469.146.868.356 1.186.662.319.306.532.72.608 1.271.076.551-.081 1.117-.343 1.6-.263.483-.677.932-1.24 1.209-.561.277-1.214.409-1.858.398-.645-.011-1.243-.146-1.702-.493-.458-.348-.768-.918-.877-1.595-.109-.678.062-1.496.514-2.378.452-.882 1.155-1.754 2.147-2.25 1.017-.512 2.291-.592 3.462-.163.805.303 1.537.871 2.176 1.647.64.776 1.067 1.776 1.383 2.654.317.878.55 1.684.457 2.468-.093.784-.502 1.417-1.235 2.039-.733.621-1.716 1.221-2.822 1.159-.87-.05-1.734-.332-2.438-.79-.704-.458-1.244-1.079-1.527-1.846-.283-.767-.203-1.814.348-2.399.551-.585 1.386-.864 2.321-.874.934-.011 1.917.383 2.567 1.025.649.642.959 1.653.824 2.457-.136.804-.588 1.551-1.329 2.078-.741.528-1.711.86-2.893.795-.893-.049-1.702-.34-2.377-.93-.675-.59-1.152-1.566-1.193-2.713-.041-1.145.326-2.427 1.129-3.379.803-.952 1.965-1.56 3.284-1.565 1.319-.004 2.659.546 3.593 1.447.935.902 1.418 2.304 1.285 3.731-.134 1.427-.864 2.713-1.844 3.46-.98.747-2.287 1.129-3.537 1.034-1.25-.095-2.322-.66-3.196-1.644-.873-.984-1.377-2.241-1.381-3.504-.005-1.263.542-2.398 1.421-3.106.878-.708 1.951-1.083 3.088-1.208.959-.084 2.032.028 2.962.497.93.469 1.713 1.293 2.169 2.241.457.948.593 2.046.405 3.089-.188 1.042-.706 1.998-1.402 2.71-.696.712-1.649 1.206-2.672 1.387-.522.094-1.041.134-1.527.083-2.209-.244-3.146-1.925-2.636-3.98.511-2.054 2.562-4.235 4.615-5.101.771-.325 1.579-.507 2.387-.545.808-.038 1.623.056 2.373.355.75.299 1.387.761 1.882 1.339.495.577.858 1.277 1.046 2.06.188.782.15 1.576-.27 2.411-.421.835-1.117 1.594-2.083 2.055-.966.461-2.135.54-3.243.207-1.108-.333-2.04-1.07-2.574-2.057-.534-.987-.659-2.2-.245-3.423.414-1.224 1.516-2.584 2.709-3.057.735-.291 1.58-.44 2.457-.409.877.031 1.687.285 2.403.719.715.432 1.197 1.02 1.391 1.747.194.728.07 1.497-.334 2.174-.403.678-1.085 1.255-1.818 1.536-.734.281-1.525.276-2.244-.084-.718-.359-1.268-1.046-1.564-1.765-.297-.719-.362-1.693-.169-2.747.193-1.054 1.052-2.194 1.802-2.712.533-.369 1.156-.611 1.822-.68.667-.07 1.25-.002 1.747.325.497.327.82.888.934 1.469.113.581.094 1.228-.093 1.844-.188.617-.558 1.188-1.026 1.614-.468.426-1.051.694-1.66.791-.61.096-1.343-.015-1.952-.417-.608-.401-1.099-1.045-1.365-1.65-.267-.605-.269-1.363-.095-1.97.174-.606.535-1.155 1.088-1.654.552-.497 1.252-.907 1.985-.965.734-.058 1.427.176 2.013.735.587.558.949 1.331 1.14 2.282.192.951-.028 2.038-.728 2.802-.7.764-1.696 1.258-2.717 1.479-.929.197-1.976.086-2.858-.433-.882-.518-1.618-1.478-2.015-2.422-.397-.944-.465-2.028-.188-3.011.277-.983.806-1.837 1.604-2.543.798-.705 1.83-1.165 2.907-1.211.701-.03 1.348.183 2.005.479.657.296 1.202.761 1.609 1.310.407.548.711 1.194.866 1.885.155.691.126 1.444-.1 2.187-.227.742-.664 1.454-1.285 2.05-.621.597-1.473 1.007-2.487 1.236-.93.208-1.922.213-2.838-.117-.916-.330-1.768-.97-2.342-1.793-.573-.823-.885-1.857-.852-2.949.033-1.092.423-2.188 1.17-3.15.747-.963 1.885-1.703 3.152-1.982.763-.168 1.566-.214 2.265-.061.698.153 1.341.528 1.840 1.074.498.546.84 1.212.948 1.893.109.681-.052 1.37-.471 2.016-.419.646-1.094 1.149-1.896 1.443-.802.294-1.694.38-2.537.311-.842-.07-1.646-.334-2.264-.457-.617-.122-1.24-.131-1.83-.021-.59.11-1.125.35-1.571.704-.446.353-.787.809-.994 1.339-.208.53-.284 1.111-.222 1.675.061.564.259 1.095.577 1.547.318.452.753.812 1.272 1.047.519.235 1.114.338 1.741.295.626-.042 1.267-.226 1.852-.534.584-.308 1.107-.733 1.527-1.243.421-.51.729-1.104.901-1.737.172-.633.206-1.302.099-1.963-.108-.662-.358-1.297-.734-1.847-.376-.55-.873-.997-1.464-1.308-.592-.311-1.27-.476-1.996-.484-.725-.008-1.472.138-2.164.432-.692.294-1.319.729-1.835 1.275-.516.546-.912 1.192-1.155 1.898-.243.706-.328 1.458-.247 2.193.081.735.328 1.439.723 2.056.395.618.932 1.139 1.572 1.523.64.384 1.381.624 2.168.694.788.07 1.611-.031 2.373-.298.762-.268 1.451-.703 2.015-1.278.563-.574.991-1.278 1.253-2.062.261-.784.348-1.631.252-2.482-.095-.851-.433-1.644-.984-2.316-.551-.673-1.308-1.205-2.203-1.536-.895-.331-1.921-.453-2.952-.354-1.031.1-1.979.429-2.775.957-.796.529-1.428 1.251-1.848 2.098-.419.847-.617 1.799-.575 2.793.042.994.323 1.954.819 2.799.496.845 1.202 1.558 2.066 2.066.864.508 1.867.799 2.915.845 1.048.045 2.12-.159 3.091-.592.971-.433 1.831-1.085 2.493-1.897.662-.812 1.119-1.776 1.332-2.812.214-1.036.082-2.128-.372-3.093-.454-.965-1.222-1.787-2.181-2.383-.958-.596-2.102-.951-3.284-1.025-1.181-.074-2.391.13-3.475.597-1.083.468-2.032 1.192-2.766 2.099-.734.907-1.247 1.99-1.488 3.109-.241 1.118-.204 2.261.105 3.336.309 1.076.91 2.067 1.748 2.859.839.791 1.905 1.378 3.085 1.705 1.18.327 2.459.387 3.693.174 1.234-.213 2.41-.699 3.424-1.428 1.013-.729 1.854-1.688 2.443-2.795.589-1.107.917-2.35 1.954-3.593.411-.531.798-1.087 1.144-1.68.347-.593.652-1.227.894-1.898.242-.671.42-1.377.525-2.093.105-.716.136-1.439.091-2.152-.045-.713-.203-1.409-.462-2.063-.258-.654-.614-1.258-1.05-1.792-.437-.534-.951-.989-1.523-1.341-.571-.353-1.196-.601-1.851-.733-.654-.132-1.333-.146-2.002-.042-.669.105-1.319.324-1.91.644-.591.32-1.113.738-1.536 1.236-.423.498-.742 1.071-.937 1.691-.194.62-.26 1.277-.194 1.932.065.655.26 1.296.577 1.879.317.584.752 1.104 1.278 1.526.525.423 1.137.74 1.802.933.664.193 1.375.259 2.088.194.713-.065 1.419-.26 2.073-.574.654-.313 1.246-.74 1.737-1.258.491-.518.875-1.12 1.131-1.777.256-.657.378-1.36.36-2.068-.018-.707-.156-1.411-.407-2.074-.251-.663-.612-1.279-1.066-1.815-.454-.535-.995-.985-1.597-1.325-.601-.339-1.256-.563-1.928-.662-.672-.099-1.355-.072-2.007.08-652.152-1.265.418-1.821.801-556.383-1.065.856-1.472 1.614-1.205 2.274.267.66.858 1.213 1.606 1.613.748.4 1.643.642 2.58.708.937.066 1.905-.045 2.805-.323.9-.278 1.722-.72 2.378-1.306.657-.586 1.139-1.309 1.405-2.112.266-.803.311-1.674.131-2.502-.18-.828-.588-1.601-1.189-2.235-.601-.634-1.385-1.12-2.259-1.405-.873-.285-1.825-.366-2.756-.239-.93.127-1.829.461-2.593.978-.764.517-1.388 1.204-1.814 2.003-.427.799-.652 1.701-.652 2.618 0 .917.225 1.819.652 2.618.426.799 1.05 1.486 1.814 2.003.764.517 1.663.851 2.593.978.931.127 1.883.046 2.756-.239.874-.285 1.658-.771 2.259-1.405.601-.634 1.009-1.407 1.189-2.235.18-.828.135-1.699-.131-2.502-.266-.803-.748-1.526-1.405-2.112-.656-.586-1.478-1.028-2.378-1.306-.9-.278-1.868-.389-2.805-.323-.937.066-1.832.308-2.58.708-.748.4-1.338.953-1.606 1.613-.267.66-.219 1.418.12 2.274.339.856.887 1.613 1.589 2.218.702.605 1.545 1.042 2.456 1.278.911.236 1.879.267 2.812.091.933-.176 1.817-.557 2.559-1.111.742-.554 1.33-1.272 1.706-2.096.376-.824.531-1.741.45-2.656-.081-.915-.395-1.796-.913-2.545-.518-.749-1.229-1.354-2.054-1.748-.825-.394-1.751-.564-2.682-.497-.931.067-1.838.371-2.614.887-.776.516-1.409 1.231-1.833 2.062-.424.831-.632 1.768-.603 2.716.029.948.295 1.873.771 2.68.476.807 1.152 1.488 1.966 1.979.814.491 1.755.779 2.724.838.969.059 1.954-.108 2.854-.483.9-.375 1.702-.951 2.333-1.678.631-.727 1.077-1.589 1.301-2.518.224-.929.219-1.91-.013-2.846-.232-.936-.694-1.815-1.341-2.544-.647-.729-1.464-1.295-2.379-1.642-.915-.347-1.911-.465-2.888-.344-.977.121-1.917.481-2.698 1.047-.781.566-1.391 1.32-1.763 2.185-.372.865-.494 1.824-.351 2.775.143.951.545 1.854 1.168 2.607.623.753 1.448 1.34 2.387 1.696.939.356 1.979.474 2.996.342 1.017-.132 1.986-.503 2.819-1.079.833-.576 1.517-1.34 1.989-2.213.472-.873.725-1.844.735-2.833.01-.989-.221-1.969-.676-2.837-.455-.868-1.121-1.611-1.942-2.158-.821-.547-1.786-.884-2.793-.978-1.007-.094-2.032.062-2.969.458-.937.396-1.773 1.023-2.427 1.821-.654.798-1.109 1.753-1.325 2.777-.216 1.024-.188 2.091.08 3.104.268 1.013.766 1.949 1.455 2.715.689.766 1.551 1.346 2.493 1.687.942.341 1.952.434 2.934.271.982-.163 1.919-.582 2.715-1.222.796-.64 1.439-1.492 1.865-2.457.426-.965.626-2.029.584-3.097-.042-1.068-.326-2.115-.826-3.048-.5-.933-1.205-1.737-2.059-2.341-.854-.604-1.841-0z" />
+    <!-- ================= BOTÓN FLOTANTE WHATSAPP ================= -->
+    <a href="https://wa.me/593979099282?text=Hola%20equipo%20de%20Page113,%20deseo%20cotizar%20una%20p%C3%A1gina%20web"
+        target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-6 right-6 bg-esmeralda text-slate-950 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-2xl transition-all duration-300 z-50"
+        aria-label="Contactar por WhatsApp">
+        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
     </a>
 
-    <!-- SCRIPT DE JAVASCRIPT CON EL CONTROLADOR DE LA IDEA RÁPIDA HACIA WHATSAPP -->
-    <script>
-        function enviarIdeaWhatsApp() {
-            const inputIdea = document.getElementById('idea-cliente');
-            const texto = inputIdea.value.trim();
-            const telefono = "593979099282";
-            
-            if (texto === "") {
-                abrirModal("Atención", "Por favor, escribe una breve idea de lo que necesitas antes de enviarla.");
-                return;
-            }
-
-            const mensaje = "Hola equipo de Page113, tengo esta idea para mi página web: " + texto;
-            const urlWhatsApp = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
-            window.open(urlWhatsApp, "_blank");
-        }
-
-        const modalGlobal = document.getElementById('modal-global');
-        const modalContenido = document.getElementById('modal-contenido');
-        const modalTitulo = document.getElementById('modal-titulo');
-        const modalMensaje = document.getElementById('modal-mensaje');
-
-        function abrirModal(titulo, mensaje) {
-            modalTitulo.textContent = titulo;
-            modalMensaje.textContent = mensaje;
-            modalGlobal.classList.remove('hidden');
-            setTimeout(() => {
-                modalGlobal.classList.remove('opacity-0');
-                modalContenido.classList.remove('scale-95');
-            }, 10);
-        }
-
-        function cerrarModal() {
-            modalGlobal.classList.add('opacity-0');
-            modalContenido.classList.add('scale-95');
-            setTimeout(() => {
-                modalGlobal.classList.add('hidden');
-            }, 300);
-        }
-
-        document.getElementById('cerrar-modal').addEventListener('click', cerrarModal);
-        document.querySelector('.cerrar-modal-btn').addEventListener('click', cerrarModal);
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && !modalGlobal.classList.contains('hidden')) {
-                cerrarModal();
-            }
-        });
-
-        const botonesDetalles = document.querySelectorAll('.boton-detalles');
-        botonesDetalles.forEach(function (boton) {
-            boton.addEventListener('click', function () {
-                if (boton.textContent.trim() === 'Próximamente') {
-                    abrirModal('Atención', 'Este proyecto sigue en desarrollo. Te avisaremos cuando esté listo para mostrarse públicamente.');
-                } else {
-                    abrirModal('Más información', 'Estamos preparando los detalles técnicos y la presentación completa de este proyecto para mostrártelo en una próxima versión.');
-                }
-            });
-        });
-
-        const tarjetasServicios = document.querySelectorAll('.tarjeta-servicio');
-        tarjetasServicios.forEach(function (tarjeta) {
-            tarjeta.addEventListener('click', function (evento) {
-                if (evento.target.classList.contains('tooltip-info')) return;
-                const nombreServicio = this.getAttribute('data-servicio');
-                abrirModal('Gracias por tu interés', 'Te agradecemos mucho tu interés en ' + nombreServicio + '. Puedes escribirnos por WhatsApp para hablar directamente y recibir una cotización rápida.');
-            });
-        });
-
-        const botonDonacion = document.querySelector('.boton-paypal');
-        if (botonDonacion) {
-            botonDonacion.addEventListener('click', function () {
-                abrirModal('Apóyanos', 'Gracias por querer invitarnos un café. Pronto habilitaremos el enlace oficial para apoyar nuestro trabajo.');
-            });
-        }
-
-        const todosLosEnlacesNavegacion = document.querySelectorAll('a[href^="#"]');
-        const todasLasPantallas = document.querySelectorAll('section');
-
-        todosLosEnlacesNavegacion.forEach(function (enlace) {
-            enlace.addEventListener('click', function (evento) {
-                evento.preventDefault();
-                const idDestino = this.getAttribute('href');
-                const pantallaNueva = document.querySelector(idDestino);
-
-                let pantallaActual = null;
-                todasLasPantallas.forEach(function (pantalla) {
-                    if (pantalla.style.display !== 'none') {
-                        pantallaActual = pantalla;
-                    }
-                });
-
-                if (!pantallaNueva || pantallaActual === pantallaNueva) return;
-
-                pantallaActual.classList.add('caja-oculta');
-
-                setTimeout(function () {
-                    pantallaActual.style.display = 'none';
-                    pantallaNueva.classList.add('caja-oculta');
-                    pantallaNueva.style.display = '';
-                    pantallaNueva.offsetHeight;
-                    pantallaNueva.classList.remove('caja-oculta');
-                }, 400);
-            });
-        });
-
-        const botonHamburguesa = document.getElementById('boton-menu');
-        const navegacionMenu = document.querySelector('.navegacion-principal');
-
-        if (botonHamburguesa && navegacionMenu) {
-            botonHamburguesa.addEventListener('click', function () {
-                navegacionMenu.classList.toggle('menu-activo');
-            });
-
-            navegacionMenu.querySelectorAll('a').forEach(function (enlace) {
-                enlace.addEventListener('click', function () {
-                    navegacionMenu.classList.remove('menu-activo');
-                });
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

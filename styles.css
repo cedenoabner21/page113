@@ -1,0 +1,54 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Clases de transición de vistas */
+.vista {
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+.vista-oculta {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.caja-animada {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.menu-activo {
+    display: flex !important;
+}
+
+/* Mockups de navegador */
+.mockup-browser {
+    background: #ffffff;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(26, 26, 26, 0.12);
+}
+
+.mockup-bar {
+    height: 42px;
+    background: #f4f6f7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 14px;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.mockup-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    display: inline-block;
+}
+
+/* Bloquear scroll del body cuando el modal está abierto */
+body.modal-abierto {
+    overflow: hidden;
+}
